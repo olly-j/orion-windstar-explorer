@@ -58,6 +58,10 @@ The official source labels duration as Days. ORION uses published days until the
 
 The saved feed provides broad Windstar coverage within its published date range. It is not proof that every agency allocation, future release or invitation-only fare has been discovered. Missing prices and missing seller evidence are shown as gaps.
 
+### See more voyages without paging
+
+ORION opens 96 results at a time. At the bottom of the results, choose 48, 96, 240 or All matching voyages. Your choice stays in this browser. Photos load as you reach them; list view is useful for a large comparison. The full matching count stays visible.
+
 ## Choose exactly what suits you
 
 Select several ships or destinations, and enter your own trip length and budget. The preview shows how many voyages match before you apply.
@@ -209,6 +213,10 @@ Automatic website publication is not enabled. The collected data must be built, 
 ### What reloading does
 
 Reloading opens the newest edition already on GitHub Pages. It does not run collection, bypass a source interval or confirm cabin availability. Review the price and seller dates before asking for a current quote.
+
+### An open page can notice a newer edition
+
+While this tab is visible, ORION checks the published website edition every five minutes and when you return to the tab. A newly published data file is loaded while preserving your filter choices. This does not contact a cruise seller or bypass the separate publication step.
 
 ## Privacy, accessibility and controls
 

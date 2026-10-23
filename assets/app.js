@@ -66,9 +66,10 @@ if(document.body.dataset.mode==='help'){
 
 const F=globalThis.ORIONFilters;
 const DEFAULT=F.empty();
-let state=F.empty(),DATA=null,PRODUCTS=[],BY_ID=new Map(),PAGE_SIZE=12;
+let state=F.empty(),DATA=null,PRODUCTS=[],BY_ID=new Map(),PAGE_SIZE=96;
 let saved=new Set(Array.isArray(store.read('saved',[]))?store.read('saved',[]):[]);
 let compared=new Set(Array.isArray(store.read('compare',[]))?store.read('compare',[]).slice(0,3):[]);
+let selectedSize=store.read('pageSize','96');if(!['48','96','240','all'].includes(String(selectedSize)))selectedSize='96';PAGE_SIZE=selectedSize==='all'?10000:Number(selectedSize);if($('pageSize'))$('pageSize').value=String(selectedSize);
 let layout=store.read('layout','cards');if(!['cards','list'].includes(layout))layout='cards';
 let DETAIL_ID=null,DETAIL_TAB='overview',DETAIL=null,DETAIL_COLUMN='',DETAIL_SEQUENCE=0,DETAIL_RENDER=0;
 const detailFiles=new Map();let detailChart=null,calendarChart=null,CALENDAR_OPEN=false;
@@ -203,6 +204,7 @@ function exportSaved(){const rows=[...saved].map(id=>BY_ID.get(id)).filter(Boole
 let searchTimer;
 $('query')?.addEventListener('input',e=>{clearTimeout(searchTimer);state.q=e.target.value;state.page=1;searchTimer=setTimeout(()=>render(),130)});
 
+$('pageSize')?.addEventListener('change',e=>{selectedSize=e.target.value;PAGE_SIZE=selectedSize==='all'?10000:Number(selectedSize);store.write('pageSize',selectedSize);state.page=1;render();});
 $('sort')?.addEventListener('change',e=>{state.sort=e.target.value;state.page=1;render()});
 $('calendarYear')?.addEventListener('change',()=>renderCalendar());
 $('showExcluded')?.addEventListener('change',renderOffers);
@@ -335,5 +337,7 @@ document.addEventListener('click',e=>{
 });
 $('voyageDialog')?.addEventListener('change',e=>{if(e.target.id==='archiveSeries'){ARCHIVE_SERIES=e.target.value;renderVoyage();requestAnimationFrame(()=>$('archiveSeries')?.focus({preventScroll:true}))}});
 
+let EDITION_POLL_RUNNING=false;async function refreshPublishedEdition(){if(EDITION_POLL_RUNNING||document.hidden||!DATA||document.querySelector('dialog[open]'))return;EDITION_POLL_RUNNING=true;try{const r=await fetch(new URL('release.json',base),{cache:'no-cache'});if(!r.ok)return;const v=await r.json();const meta=document.querySelector('meta[name=orion-catalogue]');if(typeof v.data_file==='string'&&/^data\/catalogue\.[a-f0-9]+\.json$/.test(v.data_file)&&meta.content!==v.data_file){meta.content=v.data_file;await loadCatalogue();toast('Updated published prices loaded. Your filters and saved voyages are kept.')}}catch(e){console.warn('ORION edition refresh deferred')}finally{EDITION_POLL_RUNNING=false}}
+setInterval(refreshPublishedEdition,5*60*1000);window.addEventListener('focus',refreshPublishedEdition);
 loadCatalogue();
 })();
