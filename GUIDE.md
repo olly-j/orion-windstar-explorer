@@ -4,7 +4,7 @@ Public cruise research. No booking transactions.
 
 ## Find a cruise worth a closer look
 
-ORION helps you explore Windstar departures and decide which fares deserve a proper quote.
+Choose a destination or explore recorded price changes. Open a voyage to compare dates, inspect the evidence and copy a precise request for a UK quote.
 
 ### 1. Start broad
 
@@ -17,6 +17,10 @@ Recorded drops shows changes in saved supplier prices. Agency evidence shows voy
 ### 3. Compare before spending
 
 Open a voyage and inspect its cabins, seller evidence and price history. Save promising options, compare up to three, then copy the quote request. You decide whether to send it. ORION does not contact agents, create holds or make bookings.
+
+### Browse by destination
+
+The destination shortcuts apply a region filter to the complete catalogue. Select an active destination again to clear it. Photographs provide regional inspiration; they do not confirm a particular port, cabin or view from your ship.
 
 ## What the price means
 
@@ -73,6 +77,10 @@ Active filters appear as removable chips above the results. Removing a chip leav
 ### Cards, list and sharing
 
 Switch between cards and the compact list without changing your filters. Pagination tells you how many results remain. Share view copies a link containing filters, not your private saved list. A voyage's Share button copies a direct link to that exact product.
+
+### Group dates without losing options
+
+Every departure shows each product separately. Group by itinerary keeps matching ship, itinerary, duration and product type together, and shows the lowest-priced date that passes your filters. Open All dates to review the full retained family.
 
 ## Choose dates with price context
 
@@ -217,3 +225,27 @@ Press / for search when outside a text field. Press Escape to close a dialog or 
 ### Appearance and motion
 
 Use the appearance control for system, light or dark mode. Reduced-motion settings are respected. No information depends on animation or colour alone.
+
+## Use archived prices without guessing
+
+An archived price tells you what a seller published on a particular day. It adds context to today’s research.
+
+### Start with the same voyage
+
+ORION accepts archived adverts only when the voyage identifier, ship, departure and duration match a current product. Flight packages and tours with different durations are excluded.
+
+### Keep sources and cabin types separate
+
+Choose Archived seller adverts in Price history. Each seller and cabin category has its own series. An unspecified lead-in fare cannot be treated as the price of your chosen cabin.
+
+### Read the markers and source links
+
+Diamond markers show real archive captures. Each table row opens the timestamped archived page. Capture time and retrieval time are different dates. Empty months have no evidence, and no prices are interpolated.
+
+### Choose a useful time window
+
+Use 30 days, 90 days, 12 months or All found. An empty range offers a way back to the full evidence. Lowest observed means the lowest captured price, not a guaranteed annual low.
+
+### Use the evidence in a current quote
+
+Ask a seller to confirm the exact cabin, inclusions and final UK total. An archived reduction alone cannot trigger a verified-bargain badge or establish current availability.

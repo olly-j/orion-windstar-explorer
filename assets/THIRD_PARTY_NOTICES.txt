@@ -67,3 +67,21 @@ WAI modal dialog pattern: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
 Flowbite dashboard reference: https://github.com/themesberg/flowbite-admin-dashboard
 
 ORION layout, CSS, application logic and guide are original implementation. System fonts only. No external tracking.
+
+ORION 3.0 destination photographs (23 October 2026)
+Licensed under the Unsplash License: https://unsplash.com/license
+Used as regional inspiration, not as a photograph of the ship, cabin or every port on a voyage.
+
+Manarola, Italian Riviera. Photographer: Marc Zimmer.
+https://unsplash.com/photos/cinque-terre-manarola-italy-JAJzmRREjPI
+Asset: assets/imagery/mediterranean.jpg
+
+Bora Bora, French Polynesia. Photographer: Roméo A. (@gronemo).
+https://unsplash.com/photos/the-water-is-crystal-blue-and-clear-and-there-are-huts-in-the-water-oSIoto5nhqU
+Asset: assets/imagery/tahiti.jpg
+
+Geiranger, Norway. Photographer: Alex Korolkoff (@koff).
+https://unsplash.com/photos/a-scenic-fjord-surrounded-by-green-mountains-rjW-ylwfG6k
+Asset: assets/imagery/northern-europe.jpg
+
+Composition references only, not included artwork: Outdo and Here* as featured by One Page Love, and Airbnb navigation as featured by Navbar Gallery. ORION's layout and interface are original. Gallery screenshots are not shipped.
