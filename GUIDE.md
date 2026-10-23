@@ -178,6 +178,10 @@ Select Compare on up to three voyages, then open the comparison tray. Review dat
 
 Export saved creates a CSV of the retained public values and source dates. It is a snapshot for research, not a quote. Export it before clearing saved voyages. Saving or comparing does not subscribe you to price alerts.
 
+### Bookmarks and price watches are separate
+
+Saving a voyage creates a bookmark only. To follow a specific price condition, open the voyage and choose Watch price. Its conditions work on this browser while the website is open; no booking or enquiry is submitted.
+
 ## Check benefits before combining them
 
 A campaign's existence and your entitlement are separate facts.
@@ -261,3 +265,23 @@ Use 30 days, 90 days, 12 months or All found. An empty range offers a way back t
 ### Use the evidence in a current quote
 
 Ask a seller to confirm the exact cabin, inclusions and final UK total. An archived reduction alone cannot trigger a verified-bargain badge or establish current availability.
+
+## Watch a price and test delivery
+
+Set a target for one exact voyage and price category. Watches use newly published data while the page is open.
+
+### Set your target
+
+Open a voyage and choose Watch price. Select the listed category, enter an estimated total for two, a percentage decrease, or both. A notice is added when either condition is met in a newer fresh snapshot. Watches and their inbox remain on this browser.
+
+### What gets compared
+
+The same voyage and exact price column are tracked. A different cabin becoming cheaper does not count. Old snapshots, unchanged editions and duplicate changes are suppressed. Further percentage notices require another material decrease after the previous alert.
+
+### Test the route you actually have
+
+Open Price watches using the clock icon, expand Delivery status and a test, then select Test in-page delivery. A clearly labelled test appears in the inbox. It is not a bargain and does not prove a phone notification. Desktop notices require permission after you explicitly select Enable desktop notices.
+
+### What is not connected yet
+
+The page must remain open and new prices must be published. Closed-page push and email delivery are not connected to this site. Automated public publication still needs an authorised deployment. For the existing ChatGPT task, turn on Push or Email under Settings > Notifications and grant mobile notification permission. A task receipt does not prove the notification reached your device.
