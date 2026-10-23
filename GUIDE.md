@@ -70,6 +70,10 @@ Select several ships or destinations, and enter your own trip length and budget.
 
 Tick any combination. Choices within ships or destinations are alternatives: a result can match any selected ship and any selected region. Your date, length and budget conditions must also match. Leaving a group clear includes everything in that group.
 
+### Your whole cruise must fit
+
+Earliest departure means the cruise starts on or after that date. Cruise ends by means it finishes on or before that date, inclusive. For 27 March to 18 April, a cruise finishing on 18 April is included; one finishing on 19 April is excluded, even if it leaves within the window. When no matched seller end date is retained, ORION conservatively estimates departure plus the published duration and labels it as estimated. Unknown or conflicting end dates cannot pass an end-date limit. Flights and transfers may need extra days.
+
 ### Your own trip length
 
 Enter the minimum and maximum number of days, such as 9 to 12. Enter the same number twice for an exact length. Shortcuts are optional. The length follows the publisher’s listed trip duration; confirm actual cruise nights with your seller.
@@ -92,11 +96,11 @@ There are two different ways to compare dates, and each answers a different ques
 
 ### Price calendar
 
-The calendar above the results shows the cheapest guide among the matching departures in each month of the selected year. Clicking a bar filters to that month. The underlying itineraries, durations and cabin columns can differ; this is a discovery tool.
+Each calendar bar shows the cheapest guide among cruises that both start and finish within that month and meet your other active filters. Selecting a month applies that whole-cruise date window. Itineraries, durations and cabins can differ, so this is a discovery tool.
 
 ### All dates for one voyage
 
-Open All dates on a card to compare products with the same ship, named itinerary, published duration and type. The chart and table contain actual retained dates and guides. Select a date to inspect that product's own seller evidence.
+Open All dates to compare departures with the same ship, itinerary, duration and type. With a date filter applied, only cruises that start and end within your window are shown. The chart, table, cheaper-date suggestions and grouped itinerary results respect those same bounds. Both departure and end dates appear, with calculated ends marked as estimates.
 
 ### A lower-priced date is not a discount
 

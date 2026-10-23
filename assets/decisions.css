@@ -5,3 +5,6 @@
 .overview-history-links{display:flex;gap:13px;align-items:center;flex-wrap:wrap}.overview-history-links>.text-link{font-size:11px}@media(max-width:760px){.overview-history-links{gap:8px}.overview-history-links>.text-link{font-size:10px}}
 
 .results-capacity{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;padding:20px 0;color:var(--muted);font-size:11px}.results-capacity label{font-weight:600;display:flex;align-items:center;gap:9px}.results-capacity select{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 11px;border-radius:7px;min-height:40px}.voyage-card{content-visibility:auto;contain-intrinsic-size:auto 490px}@media(max-width:700px){.results-capacity{gap:9px}.results-capacity>span{font-size:10px}}
+
+/* Full-voyage travel-window dates stay visible beside the departing date. */
+.trip-end-date{font-size:11px;line-height:1.5;color:var(--muted);margin-top:3px}#travelWindowHelp{margin-top:10px}#voyageDialog [data-end-date]{font-size:inherit}
