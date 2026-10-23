@@ -4,23 +4,23 @@ Public cruise research. No booking transactions.
 
 ## Find a cruise worth a closer look
 
-Choose a destination or explore recorded price changes. Open a voyage to compare dates, inspect the evidence and copy a precise request for a UK quote.
+Choose the places and ships you like, compare prices and dates, then save the voyages worth checking.
 
-### 1. Start broad
+### Start with your plans
 
-Search a place, ship, itinerary or cruise ID. Choose a region or dates when they matter. Use the Filters button for ship, duration, cruise type, budget and a particular supplier fare column. The result count always reflects your current filters.
+Choose several destinations or ships. Use Filters to enter any trip-length range, exact duration or budget. You can see the matching count before applying.
 
-### 2. Find a reason to investigate
+### Understand the price in a glance
 
-Recorded drops shows changes in saved supplier prices. Agency evidence shows voyages with retained seller advertisements. Neither means a confirmed bargain. Use All dates to see when the same named itinerary may be cheaper.
+Open a voyage for its price guide, a graph of recorded prices and any lower-priced alternative dates. Estimated costs are for two people. The source and exact category are available under Price basis, source and dates.
 
-### 3. Compare before spending
+### Compare and shortlist
 
-Open a voyage and inspect its cabins, seller evidence and price history. Save promising options, compare up to three, then copy the quote request. You decide whether to send it. ORION does not contact agents, create holds or make bookings.
+Save your favourites and compare up to three voyages. Compare cabins and sellers, then copy a detailed quote request. The site does not submit that request or make a reservation.
 
-### Browse by destination
+### Check the dates
 
-The destination shortcuts apply a region filter to the complete catalogue. Select an active destination again to clear it. Photographs provide regional inspiration; they do not confirm a particular port, cabin or view from your ship.
+Price updates explains the date of the main fare feed, seller checks and this website edition. Automatic publication remains off. Earlier prices are supporting context and stay separate from recent supplier observations.
 
 ## What the price means
 
@@ -58,29 +58,29 @@ The official source labels duration as Days. ORION uses published days until the
 
 The saved feed provides broad Windstar coverage within its published date range. It is not proof that every agency allocation, future release or invitation-only fare has been discovered. Missing prices and missing seller evidence are shown as gaps.
 
-## Search, filter and share a view
+## Choose exactly what suits you
 
-Search handles words; filters narrow the dates and price guides you see.
+Select several ships or destinations, and enter your own trip length and budget. The preview shows how many voyages match before you apply.
 
-### Search
+### Several ships or regions
 
-Enter a destination, port, ship, itinerary or exact cruise ID. Multiple words narrow the results together. Press / when you are not typing in a field to focus search. Reset search and filters with Clear all.
+Tick any combination. Choices within ships or destinations are alternatives: a result can match any selected ship and any selected region. Your date, length and budget conditions must also match. Leaving a group clear includes everything in that group.
 
-### Dates and budget
+### Your own trip length
 
-Use date presets or enter a start and end date in Filters. Dates include both endpoints. Budget means the displayed cruise guide for two, not an all-in holiday budget. School-holiday dates are not inferred; enter the dates you can travel.
+Enter the minimum and maximum number of days, such as 9 to 12. Enter the same number twice for an exact length. Shortcuts are optional. The length follows the publisher’s listed trip duration; confirm actual cruise nights with your seller.
 
-### Remove one filter
+### Any budget
 
-Active filters appear as removable chips above the results. Removing a chip leaves your other choices in place. Search and filters also apply to the price calendar and the current results view.
+Type any minimum or maximum price for two. These are cruise-only estimates and may exclude flights, transfers and mandatory charges. A maximum of zero finds no positive-priced cruises; a blank field means no limit.
 
-### Cards, list and sharing
+### Preview, apply or cancel
 
-Switch between cards and the compact list without changing your filters. Pagination tells you how many results remain. Share view copies a link containing filters, not your private saved list. A voyage's Share button copies a direct link to that exact product.
+Show voyages gives the matching count while you choose. Apply once ready. Closing the panel leaves your previous filters unchanged. The chips above the results remove individual ships, regions or ranges without clearing everything else.
 
-### Group dates without losing options
+### Keep or share your view
 
-Every departure shows each product separately. Group by itinerary keeps matching ship, itinerary, duration and product type together, and shows the lowest-priced date that passes your filters. Open All dates to review the full retained family.
+Your selected ships, regions and ranges are stored in the page link. Reloading or sharing that link preserves the same filters. Saved voyages stay local to this browser.
 
 ## Choose dates with price context
 
@@ -100,7 +100,11 @@ Moving to another date changes the purchase. Compare flights, time off and the f
 
 ## Read recorded price changes correctly
 
-A time-series chart follows one fare column on one exact product.
+A voyage’s overview shows how its selected price has moved. The graph uses actual checks of the same listed category, with clear dates and estimates for two.
+
+### A useful first read
+
+At its lowest recorded price means the latest value equals the lowest among the observations held by ORION. It does not mean the lowest price ever offered or the cheapest available seller. Expand the details for exact values, dates and the supplier’s category code.
 
 ### Same column, actual observations
 
@@ -186,25 +190,25 @@ Your agent quote may already include loyalty or All-Inclusive benefits. Onboard 
 
 The default list focuses on routes needing verification. Excluded examples can be revealed to explain regional restrictions or expired campaigns. No private account, invitation token or restricted document is exposed here.
 
-## Data freshness and automatic updates
+## When do prices update?
 
-The dates on the site tell you what was actually checked and published.
+Collection and website publication are separate. The website shows the latest published edition, with the actual dates of its prices.
 
-### Supplier snapshot
+### Main cruise-price feed
 
-This is when the GBP fare feed was collected. Each agency advertisement and offer has its own observation date. A successful collector run can check a different source without refreshing this feed.
+The local collector runs hourly, but the main Windstar price feed currently has a 20-hour minimum between checks. A run before that deadline leaves the last successful price check unchanged. The next permitted check is shown under Price updates. Actual checks also depend on the computer being online and the source responding.
 
-### Website publication
+### Seller-price checks
 
-This edition is a published snapshot on GitHub Pages. Collection, analysis and website publication are separate steps. Unattended publication is not currently enabled. A scheduled ORION research run does not automatically refresh this website.
+Agencies have their own check schedules. Their latest retained observation can be newer than the main cruise-price feed. Individual advertisements keep their own dates.
 
-### Reload snapshot
+### Publishing the website
 
-Reloading checks GitHub for the latest published edition. It does not start research or ask a supplier for a live price. The website keeps its last good snapshot if collection or publication fails.
+Automatic website publication is not enabled. The collected data must be built, checked and published manually. The website edition date can therefore be newer than the fare data, or older than unpublished collected data.
 
-### Stale-data warning
+### What reloading does
 
-After 48 hours without a newer supplier snapshot, ORION flags it for rechecking. That is an internal review threshold, not a guarantee that a price stays valid for 48 hours. Recheck any fare before booking.
+Reloading opens the newest edition already on GitHub Pages. It does not run collection, bypass a source interval or confirm cabin availability. Review the price and seller dates before asking for a current quote.
 
 ## Privacy, accessibility and controls
 
