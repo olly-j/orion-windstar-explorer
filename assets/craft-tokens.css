@@ -23,3 +23,14 @@
 /* Final Craft review: provenance is readable, photography supports the main headline. */
 .hero-image figcaption strong{display:none}.hero-image figcaption{padding-top:10px}.hero-image figcaption small{font-size:11px;line-height:1.5}.freshness-line,.freshness-line>.inline-link{font-size:12px;line-height:1.6}.craft-wordmark .craft-strap{font-size:11px}
 @media(max-width:760px){.hero-independence{margin-top:8px}.hero-signature{margin-top:8px}.hero-image{min-height:136px;height:136px}.freshness-line{gap:5px 12px}.hero-image figcaption small{font-size:10px}}
+
+/* Native FigCraft readability refinement, 31 October 2026. */
+.card-date,.trip-end-date,.price-caption,.quote-state,.evidence-trail,.evidence-trail button,
+.result-meta .muted,.section-caption,.data-state,.offer-bottom,.offer-dimensions,
+.filter-hint,.watch-fine,.watch-row small,.watch-event small,.quote-action>span{font-size:12px;line-height:1.6}
+.card-date,.price-movement,.note-meta,.visual-top .ship-label{font-size:12px}
+.header-tools .help-trigger{min-height:44px;padding:10px 9px;gap:6px}
+.header-tools .help-trigger span{display:inline;font-size:13px}
+.help-article p,.help-article li{font-size:14px;line-height:1.7}
+@media(max-width:760px){.main-nav>button{font-size:12px}.card-date{font-size:12px}.card-actions{flex-wrap:wrap}.evidence-trail button{min-height:44px}.header-tools{gap:0}.header-tools .help-trigger{padding-inline:7px}.header-tools .icon-btn{width:34px;min-width:34px}}
+@media(max-width:360px){.header-inner{grid-template-columns:1fr;gap:0;padding-top:10px}.header-tools{grid-row:2;grid-column:1;justify-content:flex-end;margin-top:2px}.main-nav{grid-row:3;grid-column:1;flex-wrap:wrap}.main-nav>button{font-size:11px}.wordmark{grid-row:1}.header-inner .craft-logo{width:180px}.header-tools .icon-btn{width:40px;min-width:40px}}
