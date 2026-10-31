@@ -238,6 +238,10 @@ Only selected public supplier, seller and offer data is published. The private r
 
 Saved voyages, comparison choices and appearance preferences use your browser's local storage. The site does not send these choices to ORION or an agency. They are not encrypted backups; use a private device and export anything you need to retain.
 
+### Hosting and external sites
+
+GitHub Pages hosts this public website and records visitor IP addresses for security. ORION keeps your saved choices in this browser. Opening an external supplier or seller link takes you to a separate site with its own privacy practices.
+
 ### Keyboard and touch
 
 Press / for search when outside a text field. Press Escape to close a dialog or tip. Use Tab and Shift+Tab to move between controls. Contextual explanations also open by tapping the information button, so they do not depend on hover. Charts have readable data tables.

@@ -1,0 +1,41 @@
+/* ORION 3.4: readable evidence, robust targets and a compact discovery journey. */
+:root { --orion-target: 32px; }
+.visual-dates { min-height: var(--orion-target); padding: 6px 9px; }
+.evidence-trail button, .archive-tag, .text-link, .inline-link { min-height: var(--orion-target); }
+.visual-top .save-button { min-width: 36px; min-height: 36px; }
+.region-art > span { opacity: 1; }
+.voyage-card { content-visibility: visible; contain-intrinsic-size: none; }
+/* Very large optional result sets retain rendering containment. Default pages are fully laid out. */
+.voyage-grid[data-large="true"] .voyage-card { content-visibility: auto; contain-intrinsic-size: auto 540px; }
+.freshness-line { gap: 8px 18px; flex-wrap: wrap; line-height: 1.6; }
+.notice-banner { align-items: flex-start; line-height: 1.6; }
+.notice-banner > .icon { margin-top: 4px; }
+.notice-banner .inline-link { flex-shrink: 0; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+ outline-width: 3px; outline-offset: 4px;
+}
+@media (max-width: 1100px) {
+ .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; padding: 12px 24px 0; }
+ .wordmark { min-width: 0; }
+ .header-tools { grid-column: 2; grid-row: 1; }
+ .main-nav { grid-column: 1 / -1; grid-row: 2; min-width: 0; width: 100%; max-width: 100%; margin: 0; overflow-x: auto; justify-content: flex-start; }
+ .main-nav > button { min-height: 40px; flex-shrink: 0; }
+ .search-dock { top: 111px; }
+ .hero-feature { max-width: 36%; }
+}
+@media (max-width: 760px) {
+ .header-inner { padding: 11px 17px 0; }
+ .destination-hero.hero { min-height: 260px; padding: 21px 20px 58px; }
+ .destination-hero h1 { font-size: clamp(33px, 9.5vw, 39px); margin: 9px 0 12px; }
+ .destination-hero #pageIntro { font-size: 12px; line-height: 1.6; }
+ .hero-actions { margin-top: 14px; }
+ .hero-bottom { left: 20px; right: 18px; }
+ .freshness-line { font-size: 10px; gap: 2px 12px; padding: 8px 0; }
+ .notice-banner { flex-wrap: wrap; gap: 5px 8px; padding: 11px 12px; }
+ .notice-banner > span { flex: 1; min-width: 200px; }
+ .notice-banner .inline-link { margin-left: 27px; }
+ .hero-feature { max-width: none; }
+ .visual-dates { min-height: 32px; }
+ .card-actions .compare-select { min-height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
