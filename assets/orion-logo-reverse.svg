@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="92" viewBox="0 0 420 92">
+  <title>ORION Open Horizon Identity</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path id="Open_horizon_O___original_outline" data-name="Open horizon O / original outline" d="M66 39 C63 25 52 16 38 16 C24 16 13 25 10 39 M10 53 C13 67 24 76 38 76 C52 76 63 67 66 53" fill="none" stroke="#f4f1e8" stroke-width="6" stroke-miterlimit="10"/>
+    <path id="Sightline___original_horizontal_aperture" data-name="Sightline / original horizontal aperture" d="M8 46 L72 46" fill="none" stroke="#f4f1e8" stroke-width="4.5" stroke-miterlimit="10"/>
+    <path id="ORION___constructed_O_1" data-name="ORION / constructed O 1" d="M126 21 C114 21 107 31 107 46 C107 61 114 71 126 71 C138 71 145 61 145 46 C145 31 138 21 126 21 Z" fill="none" stroke="#f4f1e8" stroke-width="4" stroke-linejoin="round"/>
+    <path id="ORION___constructed_R_2" data-name="ORION / constructed R 2" d="M170 71 L170 21 L188 21 C201 21 206 27 206 35 C206 44 199 48 188 48 L170 48 M187 48 L208 71 M166 21 L176 21 M166 71 L176 71 M203 71 L212 71" fill="none" stroke="#f4f1e8" stroke-width="4" stroke-linejoin="round"/>
+    <path id="ORION___constructed_I_3" data-name="ORION / constructed I 3" d="M231 21 L251 21 M241 21 L241 71 M231 71 L251 71" fill="none" stroke="#f4f1e8" stroke-width="4" stroke-linejoin="round"/>
+    <path id="ORION___constructed_O_4" data-name="ORION / constructed O 4" d="M294 21 C282 21 275 31 275 46 C275 61 282 71 294 71 C306 71 313 61 313 46 C313 31 306 21 294 21 Z" fill="none" stroke="#f4f1e8" stroke-width="4" stroke-linejoin="round"/>
+    <path id="ORION___constructed_N_5" data-name="ORION / constructed N 5" d="M338 71 L338 21 L376 71 L376 21 M334 21 L344 21 M334 71 L344 71 M370 21 L382 21" fill="none" stroke="#f4f1e8" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+</svg>

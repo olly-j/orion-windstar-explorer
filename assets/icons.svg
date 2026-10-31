@@ -1,23 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"><symbol id="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" />
-</symbol><symbol id="arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</symbol><symbol id="bookmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
-</symbol><symbol id="calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M8 2v3" />
-  <path d="M16 2v3" />
-  <rect x="3" y="3" width="18" height="18" rx="2" />
-  <path d="M3 9h18" />
-  <path d="M8 13h.01" />
-  <path d="M12 13h.01" />
-  <path d="M16 13h.01" />
-  <path d="M8 17h.01" />
-  <path d="M12 17h.01" />
-  <path d="M16 17h.01" />
-</symbol><symbol id="chart-no-axes-combined" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+</symbol><symbol id="arrow-up-right" viewBox="0 0 32 32"><path d="M132 11 L132 27 L149 27 L149 21 M140 19 L155 4 M145 4 L155 4 L155 14" transform="translate(-128 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="bookmark" viewBox="0 0 32 32"><path d="M71 4 L88 4 L88 28 L79.5 22 L71 28 Z" transform="translate(-64 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="calendar-days" viewBox="0 0 32 32"><path d="M99 7 L124 7 L124 27 L99 27 Z M99 13 L124 13 M105 3 L105 10 M118 3 L118 10 M105 18 L108 18 M115 18 L118 18 M105 23 L108 23" transform="translate(-96 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="chart-no-axes-combined" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 16v5" />
   <path d="M16 14.639V21" />
   <path d="M20 10.656V21" />
@@ -111,10 +95,7 @@
   <path d="M16 12a4 4 0 0 0-4-4" />
   <path d="m19 5-1.256 1.256" />
   <path d="M20 12h2" />
-</symbol><symbol id="trending-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M16 17h6v-6" />
-  <path d="m22 17-8.5-8.5-5 5L2 7" />
-</symbol><symbol id="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+</symbol><symbol id="trending-down" viewBox="0 0 32 32"><path d="M3 8 L10 8 L14 15 L21 15 L25 22 M19 22 L25 22 L25 16" transform="translate(0 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M18 6 6 18" />
   <path d="m6 6 12 12" />
 </symbol><symbol id="bookmark-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">

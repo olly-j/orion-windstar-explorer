@@ -107,7 +107,7 @@ function noticeTitle(){
  if(state.view==='drops')return ['A change in price.<br>A new <em>possibility.</em>','Follow genuine changes in published categories. Open the dated evidence, then confirm the complete quote.','A closer look at price drops'];
  if(state.view==='archive')return ['Every price<br>has a <em>past.</em>','Explore recovered advertisements, inspect their dates and trace the story behind today’s guide.','The earlier-price archive'];
  if(state.view==='offers')return ['The little extras.<br>The <em>full picture.</em>','Understand the benefits, eligibility and conditions that can shape your voyage.','Offers to understand'];
- return ['Find your<br>next <em>horizon.</em>','Explore Windstar voyages, compare dates and follow the price story.','Find your kind of extraordinary.'];
+ return ['Find your voyage.<br>Know the price.','Independent Windstar voyage research. Compare dates and read the evidence.','A clearer shortlist starts here.'];
 }
 function regionLabel(value){return ({'N. Europe':'Northern Europe','Greek':'Greek Islands','Latin':'Central America','Canada-Ne':'Canada & New England','Trans-Ocean':'Ocean crossings'})[value]||value;}
 function regionScene(value){if(value==='Mediterranean')return {key:'mediterranean',image:'mediterranean-card.jpg'};if(value==='Tahiti'||value==='South Pacific')return {key:'tahiti',image:'tahiti-card.jpg'};if(value==='N. Europe')return {key:'north',image:'northern-europe-card.jpg'};return {key:({'Greek':'greek','Alaska':'alaska','Caribbean':'caribbean','Asia':'asia','Latin':'latin','Trans-Ocean':'ocean','Canada-Ne':'canada'})[value]||'ocean',image:null};}

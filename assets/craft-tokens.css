@@ -1,0 +1,25 @@
+/* ORION Craft identity v1.0. Derived from the native design specification; no font files. */
+:root{--bg:#F4F1E8;--surface:#FFFEFA;--surface-2:#EEEAE0;--surface-3:#E3E8DF;--ink:#183C40;--text:#526661;--muted:#526661;--line:#D5DDD3;--blue:#183C40;--blue-soft:#E5EDE4;--nav:#183C40;--nav-text:#FFFEFA;--accent:#A4482D;--editorial-green:#527568;--header-bg:#F4F1E8F5;--photo-ink:#183C40;--paper:#FFFEFA;}
+:root{--serif:"Baskerville", "Iowan Old Style", Georgia, serif;--sans:Arial, -apple-system, BlinkMacSystemFont, sans-serif;}
+:root[data-theme=dark]{--bg:#10292D;--surface:#17383B;--surface-2:#203B40;--surface-3:#28464B;--ink:#F4F1E8;--text:#BED0C8;--muted:#BED0C8;--line:#3D5657;--blue:#B1D0BE;--blue-soft:#29463D;--nav:#F4F1E8;--nav-text:#17383B;--accent:#E3A07F;--editorial-green:#B1D0BE;--header-bg:#10292DF5;--photo-ink:#183C40;--paper:#17383B;}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10292D;--surface:#17383B;--surface-2:#203B40;--surface-3:#28464B;--ink:#F4F1E8;--text:#BED0C8;--muted:#BED0C8;--line:#3D5657;--blue:#B1D0BE;--blue-soft:#29463D;--nav:#F4F1E8;--nav-text:#17383B;--accent:#E3A07F;--editorial-green:#B1D0BE;--header-bg:#10292DF5;--photo-ink:#183C40;--paper:#17383B;}
+}
+/* Optical lockup uses the exact VectorCraft export. The emblem is not recreated in CSS. */
+.wordmark.craft-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:0;letter-spacing:0;flex:0 0 auto}
+.craft-wordmark .craft-logo{display:block;width:224px;height:49px;max-width:none}
+.craft-wordmark .logo-dark{display:none}
+.craft-wordmark .craft-strap{font:10px/1.4 var(--sans);color:var(--muted);letter-spacing:.2px;margin:0 0 8px 50px}
+:root[data-theme=dark] .craft-wordmark .logo-light{display:none}:root[data-theme=dark] .craft-wordmark .logo-dark{display:block}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .craft-wordmark .logo-light{display:none}:root:not([data-theme=light]) .craft-wordmark .logo-dark{display:block}}
+.destination-hero h1{font-size:clamp(62px,5.6vw,80px);line-height:1.08;letter-spacing:-2px;max-width:650px}
+.hero-copy{max-width:650px}.destination-hero #pageIntro{font-size:17px;max-width:530px}
+.hero-independence{font-size:12px;line-height:1.6;color:var(--muted);max-width:510px;margin-top:18px}
+.hero-signature{margin-top:18px}.hero-image .atlas-orbit{display:none}
+.quote-state,.price-caption,.evidence-trail{font-size:11px}.photo-index{display:none}
+@media(max-width:1100px){.craft-wordmark .craft-logo{width:200px;height:44px}.craft-wordmark .craft-strap{margin-left:44px}}
+@media(max-width:760px){.craft-wordmark .craft-logo{width:180px;height:40px}.craft-wordmark .craft-strap{display:none}.header-inner{min-height:72px}.destination-hero h1{font-size:46px;line-height:1.07;letter-spacing:-1.1px}.hero-copy{padding-top:4px}.destination-hero #pageIntro{font-size:15px;line-height:1.5}.hero-independence{font-size:11px;line-height:1.4;margin-top:10px}.hero-signature{margin-top:12px}.hero-image{min-height:148px;height:148px}.hero-copy .eyebrow{display:none}.hero-actions{margin-top:18px}}
+@media(max-width:360px){.destination-hero h1{font-size:40px}.header-tools{gap:0}.header-tools .icon-btn{min-width:35px;width:35px}}
+
+/* Final Craft review: provenance is readable, photography supports the main headline. */
+.hero-image figcaption strong{display:none}.hero-image figcaption{padding-top:10px}.hero-image figcaption small{font-size:11px;line-height:1.5}.freshness-line,.freshness-line>.inline-link{font-size:12px;line-height:1.6}.craft-wordmark .craft-strap{font-size:11px}
+@media(max-width:760px){.hero-independence{margin-top:8px}.hero-signature{margin-top:8px}.hero-image{min-height:136px;height:136px}.freshness-line{gap:5px 12px}.hero-image figcaption small{font-size:10px}}
