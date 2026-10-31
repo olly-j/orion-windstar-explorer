@@ -46,3 +46,7 @@ dialog{border-radius:8px;border:1px solid var(--line);background:var(--surface);
 @media(max-width:360px){.destination-hero h1{font-size:49px}.hero-evidence{font-size:9px}.search-heading{font-size:8px}.search-heading>.data-pill{font-size:8px}.field-caption{font-size:8px}.hero-image{height:150px;min-height:150px}.hero-actions .button.primary{min-height:44px}.hero-signature{gap:8px}}
 
 .voyage-dialog{margin-inline:auto}
+
+/* User-research regression: share controls reflow instead of extending the page at magnified widths. */
+@media(max-width:760px){.section-top{flex-wrap:wrap;align-items:flex-start}.section-top>div:first-child{min-width:0;max-width:100%}.section-top .top-actions{max-width:100%;flex-shrink:0;flex-wrap:wrap}.section-top .top-actions .button{white-space:normal}}
+@media(max-width:760px){.section-top .top-actions>.button{width:auto;height:auto;min-height:44px;padding:10px 12px}.results-toolbar{flex-wrap:wrap}.results-toolbar .calendar-toggle{width:auto;height:auto;min-height:44px;flex-shrink:0}}

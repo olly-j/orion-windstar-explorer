@@ -3,7 +3,7 @@
   "tips": {
     "guide": {
       "title": "A price guide, not a quote",
-      "text": "The supplier publishes GBP fare cells. ORION doubles the selected cell as an estimate for two people. Cabin availability, the fare unit and any required extras still need confirmation.",
+      "text": "This is a cruise-price estimate for two adults in GBP, based on twice a published supplier price. It is not a confirmed quote. Ask the seller to confirm the cabin, price basis, flights, transfers, taxes and other required charges.",
       "topic": "prices"
     },
     "drop": {
@@ -58,7 +58,7 @@
     },
     "calendar": {
       "title": "A discovery calendar",
-      "text": "Each bar shows the lowest two-person guide among matching departures in that month. The cruises and cabins can differ. Select a month to narrow the list, then compare the exact voyage.",
+      "text": "Each month includes only cruises that start and end within that month. The lowest guide may belong to a different ship, itinerary, length or category. It is not a like-for-like saving. Select a month to apply that complete-cruise window.",
       "topic": "dates"
     }
   },
