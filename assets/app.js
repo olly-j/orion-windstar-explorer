@@ -110,7 +110,7 @@ function noticeTitle(){
  return ['Where next?<br>Let the price lead.','Discover Windstar voyages, compare dates and see the price story before you ask for a quote.','Find your next voyage'];
 }
 function regionLabel(value){return ({'N. Europe':'Northern Europe','Greek':'Greek Islands','Latin':'Central America','Canada-Ne':'Canada & New England','Trans-Ocean':'Ocean crossings'})[value]||value;}
-function regionScene(value){if(value==='Mediterranean')return {key:'mediterranean',image:'mediterranean.jpg'};if(value==='Tahiti'||value==='South Pacific')return {key:'tahiti',image:'tahiti.jpg'};if(value==='N. Europe')return {key:'north',image:'northern-europe.jpg'};return {key:({'Greek':'greek','Alaska':'alaska','Caribbean':'caribbean','Asia':'asia','Latin':'latin','Trans-Ocean':'ocean','Canada-Ne':'canada'})[value]||'ocean',image:null};}
+function regionScene(value){if(value==='Mediterranean')return {key:'mediterranean',image:'mediterranean-card.jpg'};if(value==='Tahiti'||value==='South Pacific')return {key:'tahiti',image:'tahiti-card.jpg'};if(value==='N. Europe')return {key:'north',image:'northern-europe-card.jpg'};return {key:({'Greek':'greek','Alaska':'alaska','Caribbean':'caribbean','Asia':'asia','Latin':'latin','Trans-Ocean':'ocean','Canada-Ne':'canada'})[value]||'ocean',image:null};}
 function renderDiscovery(){
  const rail=$('destinationRail');if(!rail)return;
  $('destinationBrowser').hidden=!['all','drops','archive'].includes(state.view);

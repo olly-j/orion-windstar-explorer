@@ -85,3 +85,6 @@ https://unsplash.com/photos/a-scenic-fjord-surrounded-by-green-mountains-rjW-ylw
 Asset: assets/imagery/northern-europe.jpg
 
 Composition references only, not included artwork: Outdo and Here* as featured by One Page Love, and Airbnb navigation as featured by Navbar Gallery. ORION's layout and interface are original. Gallery screenshots are not shipped.
+
+31 October 2026 responsive derivatives of the licensed photographs above:
+mediterranean-hero.jpg (1280px), mediterranean-card.jpg (640px), tahiti-card.jpg (640px), northern-europe-card.jpg (480px). Same source photographs and licence; resized and compressed for faster browsing. Original retained assets remain unchanged.
