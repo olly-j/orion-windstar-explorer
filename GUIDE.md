@@ -290,22 +290,26 @@ Use 30 days, 90 days, 12 months or All found. An empty range offers a way back t
 
 Ask a seller to confirm the exact cabin, inclusions and final UK total. An archived reduction alone cannot trigger a verified-bargain badge or establish current availability.
 
-## A local watch, with a clear limit
+## Track an exact price
 
-Set a target for an exact departure and category. Checks use newly published data while this page is open.
+Choose a departure and supplier category, then save a target for two. Tracked prices stay in this browser.
 
-### Set your target
+### Save now, check when evidence is ready
 
-Open a voyage and choose Watch price. Select the listed category, enter an estimated total for two, a percentage decrease, or both. A notice is added when either condition is met in a newer fresh snapshot. Watches and their inbox remain on this browser.
+An older observation can still support a saved target. The target remains pending until a fresh confirmed price check is published. That first fresh value establishes the baseline; it is not reported as a new bargain.
 
-### What gets compared
+### Choose what matters
 
-The same voyage and exact price column are tracked. A different cabin becoming cheaper does not count. Old snapshots, unchanged editions and duplicate changes are suppressed. Further percentage notices require another material decrease after the previous alert.
+Set a target amount or open the optional percentage-decrease rule. The 5% and 10% buttons calculate a target from the selected category. If you explicitly set both conditions, either can create a notice. Different categories are tracked separately.
 
-### Test the route you actually have
+### A notice needs a new observation
 
-Open Price watches using the clock icon, expand Delivery status and a test, then select Test in-page delivery. A clearly labelled test appears in the inbox. It is not a bargain and does not prove a phone notification. Desktop notices require permission after you explicitly select Enable desktop notices.
+Once a target is active, ORION checks newly published values for the same voyage and category. An unchanged or repeated observation does not create another notice. A matching target does not confirm availability, inclusions or a final quote.
 
-### What is not connected yet
+### Where notices appear
 
-The page must remain open and new prices must be published. Closed-page push and email delivery are not connected to this site. Automated public publication still needs an authorised deployment. For the existing ChatGPT task, turn on Push or Email under Settings > Notifications and grant mobile notification permission. A task receipt does not prove the notification reached your device.
+Checks work while this page is open. Notices appear in Tracked prices. Browser desktop notices require permission and browser support. Email and closed-page push are not connected; closing the page stops these checks. Publication of new website editions remains manual.
+
+### Keep control
+
+Edit, pause or remove targets from Tracked prices. Your choices remain in this browser and are lost if you clear its site storage. Use the exact seller link to check the current quote or booking options.
