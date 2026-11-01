@@ -11,6 +11,22 @@ function timestamp(x){
 const date=x=>typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&Number.isFinite(Date.parse(x+'T12:00:00Z'))&&new Date(x+'T12:00:00Z').toISOString().slice(0,10)===x;
 const dataPath=x=>typeof x==='string'&&/^data\/[a-z0-9-]+\.[a-f0-9]{14,64}\.json$/.test(x);
 function age(value,now){const t=timestamp(value);return t===null||t>now?null:now-t;}
+// Discovery groups connect route variants. They never identify a price series.
+function discoveryKey(p){return JSON.stringify([p.ship,p.kind,p.discovery_family_id||p.family_id||p.id]);}
+function relatedProducts(products,selected){const key=discoveryKey(selected);return products.filter(p=>discoveryKey(p)===key).sort((a,b)=>a.departure.localeCompare(b.departure)||a.duration-b.duration||a.id.localeCompare(b.id));}
+function sameDateComparison(a,b){return !!a.family_id&&a.family_id===b.family_id&&['ship','kind','duration','from_port','to_port'].every(k=>a[k]===b[k]);}
+function historyColumns(p){return [...new Set([...(p.fares||[]).map(cell=>cell[0]),...Object.keys(p.price_history||{})])];}
+function isRetired(p,today){return ['past_departure','not_in_latest_feed'].includes(p.catalogue_status)||!!today&&p.departure<today;}
+function retiredProduct(p,today,observedAt=null){
+ if(!isRetired(p,today))return p;
+ // This is a display projection. Keep the source and observation history intact.
+ return {...p,catalogue_status:today&&p.departure<today?'past_departure':p.catalogue_status,
+  last_low_pence:Number.isSafeInteger(p.low_pence)&&p.low_pence>0?p.low_pence:(p.last_low_pence??null),
+  last_observed_at:p.last_observed_at||p.feed_observed_at||observedAt||null,
+  last_published_fares:(p.fares?.length?p.fares:p.last_published_fares||[]).map(cell=>cell.slice()),
+  fares:[],low_pence:null,changes:{},drop:null};
+}
+function partitionProducts(data,today){const current=[],retired=[];for(const p of [...data.products,...(data.retired_products||[])]){if(isRetired(p,today))retired.push(retiredProduct(p,today,data.feed?.observed_at));else current.push({...p});}return {current,retired};}
 function freshness(data,now=Date.now()){
  const feed=object(data?.feed)?data.feed:{};
  const editionAge=age(data?.built_at,now),observedAge=age(feed.observed_at,now);
@@ -31,10 +47,15 @@ function validate(data){
  if(!object(data)||data.schema_version!==2||!Array.isArray(data.products)||data.products.length<100||!object(data.feed)||!object(data.detail_files))throw Error('Unexpected catalogue format');
  if(!Array.isArray(data.offers)||!object(data.families)||!object(data.archive))throw Error('Invalid catalogue supporting evidence');
  for(const offer of data.offers){if(!object(offer)||!Array.isArray(offer.sources)||offer.sources.some(x=>!object(x)||typeof x.url!=='string'))throw Error('Invalid offer evidence');}
+ if(data.retired_products!==undefined&&!Array.isArray(data.retired_products))throw Error('Invalid retained voyage archive');
+ const retiredIds=new Set((data.retired_products||[]).map(p=>p?.id));
  const ids=new Set();
- for(const p of data.products){
+ for(const p of [...data.products,...(data.retired_products||[])]){
   if(!object(p)||typeof p.id!=='string'||!p.id||ids.has(p.id)||typeof p.ship!=='string'||!p.ship||!date(p.departure)||!Array.isArray(p.fares))throw Error('Invalid or duplicated voyage');
   for(const key of ['itinerary','region','from_port','to_port','cruise_id','voyage_id','kind','family_id'])if(typeof p[key]!=='string')throw Error('Invalid voyage description');
+  for(const key of ['discovery_family_id','discovery_family_name'])if(p[key]!==undefined&&(typeof p[key]!=='string'||!p[key]))throw Error('Invalid discovery family');
+  if(p.history_count!==undefined&&(!Number.isSafeInteger(p.history_count)||p.history_count<0))throw Error('Invalid history count');
+  if(retiredIds.has(p.id)&&(!isRetired(p)||p.fares.length||p.low_pence!==null))throw Error('Retained voyage cannot publish a current fare');
   if(!Number.isSafeInteger(p.duration)||p.duration<1||!object(p.changes)||!Number.isSafeInteger(p.archive_count)||p.archive_count<0)throw Error('Invalid voyage dimensions');
   ids.add(p.id);
   if(!dataPath(data.detail_files[p.ship]))throw Error('Missing or invalid ship evidence file');
@@ -46,5 +67,6 @@ function validate(data){
  return data;
 }
 function matchesManifest(data,manifest){return !manifest||(data.release===manifest.release&&data.built_at===manifest.built_at&&dataPath(manifest.data_file));}
-return Object.freeze({timestamp,date,dataPath,freshness,validate,matchesManifest,LIMIT});
+return Object.freeze({timestamp,date,dataPath,freshness,validate,matchesManifest,discoveryKey,relatedProducts,sameDateComparison,historyColumns,isRetired,retiredProduct,partitionProducts,LIMIT});
 });
+

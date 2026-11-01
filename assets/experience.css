@@ -128,6 +128,7 @@ small{font-size:13px}
 
 /* Departure folios: a date margin, complete particulars and a clear next step. */
 .voyage-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.voyage-card.historical-record{content-visibility:visible;contain-intrinsic-size:none;contain:none}
 .voyage-card.departure-folio{display:grid;grid-template-columns:140px minmax(0,1fr) 180px;gap:24px;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;overflow:visible;padding:24px 0;box-shadow:none;content-visibility:visible;contain:none;transition:background .14s}
 .voyage-card.departure-folio:hover{transform:none;box-shadow:none;border-color:var(--line);background:var(--surface)}
 .voyage-grid[data-large=true] .departure-folio{content-visibility:auto;contain-intrinsic-size:auto 330px}
