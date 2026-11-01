@@ -92,3 +92,5 @@ mediterranean-hero.jpg (1280px), mediterranean-card.jpg (640px), tahiti-card.jpg
 ORION Craft identity, 31 October 2026: original VectorCraft horizon lettering and icon paths; DesignCraft sharing card; PhotoCraft adjustment/crop exports of the already credited regional photographs. Existing photograph licences remain applicable. No gallery imagery or standalone font files redistributed.
 
 ORION 5.0 / The Departure Index: original constructed VectorCraft wordmark and index icons; DesignCraft share layout; PhotoCraft regional-image derivatives. Original photograph attribution and Unsplash licence above remain. CSS uses installed Georgia/Arial fallbacks; no font binaries supplied. Reference agency/gallery artwork is not included.
+
+ORION 5.1 / Considered Voyages: original VectorCraft serif wordmark and O monogram; PhotoCraft natural regional-image exports; DesignCraft sharing composition; FigCraft editable premium system. Existing original-photograph attribution and licences remain. No third-party design artwork or font binary is distributed.

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
-  <title>ORION / index mark</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="116" viewBox="0 0 110 116">
+  <title>ORION / O monogram</title>
   <g id="Layer_1" data-name="Layer 1">
-    <path id="Index_opening" data-name="Index opening" d="M10 8 L18 8 L18 48 L10 48 Z" fill="#192ba6"/>
-    <path id="Index_offset" data-name="Index offset" d="M26 16 L34 16 L34 56 L26 56 Z" fill="#192ba6"/>
-    <path id="Index_page" data-name="Index page" d="M42 8 L50 8 L50 48 L42 48 Z" fill="#a82c15"/>
+    <path id="Original_O_monogram" data-name="Original O monogram" d="M55 10 C31 10 15 29 15 55 C15 81 31 100 55 100 C79 100 95 81 95 55 C95 29 79 10 55 10 Z M55 15 C72 15 81 32 81 55 C81 78 72 95 55 95 C38 95 29 78 29 55 C29 32 38 15 55 15 Z" fill="#18363d" fill-rule="evenodd"/>
   </g>
 </svg>

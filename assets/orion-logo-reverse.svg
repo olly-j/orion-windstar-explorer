@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="116" viewBox="0 0 512 116">
-  <title>ORION / constructed primary wordmark</title>
+  <title>ORION / premium serif wordmark</title>
   <g id="Layer_1" data-name="Layer 1">
-    <path id="O1_outer" data-name="O1 outer" d="M58 8 C28 8 10 28 10 58 C10 88 28 108 58 108 C88 108 106 88 106 58 C106 28 88 8 58 8 Z M58 29 C41 29 32 40 32 58 C32 76 41 87 58 87 C75 87 84 76 84 58 C84 40 75 29 58 29 Z" fill="#f4e8e5" fill-rule="evenodd"/>
-    <path id="R_stem" data-name="R stem" d="M126 8 L149 8 L149 108 L126 108 Z" fill="#f4e8e5"/>
-    <path id="R_bowl" data-name="R bowl" d="M148 8 L179 8 C206 8 220 21 220 43 C220 63 206 77 179 77 L148 77 L148 57 L177 57 C191 57 198 53 198 43 C198 33 191 29 177 29 L148 29 Z" fill="#f4e8e5"/>
-    <path id="R_leg" data-name="R leg" d="M171 68 L195 68 L228 108 L200 108 Z" fill="#f4e8e5"/>
-    <path id="I" d="M246 8 L269 8 L269 108 L246 108 Z" fill="#f4e8e5"/>
-    <path id="O2_outer" data-name="O2 outer" d="M337 8 C307 8 289 28 289 58 C289 88 307 108 337 108 C367 108 385 88 385 58 C385 28 367 8 337 8 Z M337 29 C320 29 311 40 311 58 C311 76 320 87 337 87 C354 87 363 76 363 58 C363 40 354 29 337 29 Z" fill="#f4e8e5" fill-rule="evenodd"/>
-    <path id="N_left" data-name="N left" d="M405 8 L426 8 L426 108 L405 108 Z" fill="#f4e8e5"/>
-    <path id="N_diagonal" data-name="N diagonal" d="M425 8 L430 8 L480 72 L480 108 L476 108 L425 43 Z" fill="#f4e8e5"/>
-    <path id="N_right" data-name="N right" d="M479 8 L502 8 L502 108 L479 108 Z" fill="#f4e8e5"/>
+    <path id="O" d="M51 10 C27 10 11 29 11 55 C11 81 27 100 51 100 C75 100 91 81 91 55 C91 29 75 10 51 10 Z M51 15 C68 15 77 32 77 55 C77 78 68 95 51 95 C34 95 25 78 25 55 C25 32 34 15 51 15 Z" fill="#f7f5f0" fill-rule="evenodd"/>
+    <path id="R-stem" d="M114 11 L150 11 L150 15 L139 15 L139 95 L151 95 L151 99 L114 99 L114 95 L125 95 L125 15 L114 15 Z" fill="#f7f5f0"/>
+    <path id="R-bowl" d="M137 11 L160 11 C188 11 198 23 198 38 C198 53 187 64 160 64 L137 64 L137 59 L156 59 C175 59 183 51 183 38 C183 25 175 16 156 16 L137 16 Z" fill="#f7f5f0"/>
+    <path id="R-leg" d="M155 60 L172 60 L200 94 L210 94 L210 99 L185 99 L155 64 Z" fill="#f7f5f0"/>
+    <path id="I" d="M234 11 L274 11 L274 15 L261 15 L261 95 L274 95 L274 99 L234 99 L234 95 L247 95 L247 15 L234 15 Z" fill="#f7f5f0"/>
+    <path id="O2" d="M339 10 C315 10 299 29 299 55 C299 81 315 100 339 100 C363 100 379 81 379 55 C379 29 363 10 339 10 Z M339 15 C356 15 365 32 365 55 C365 78 356 95 339 95 C322 95 313 78 313 55 C313 32 322 15 339 15 Z" fill="#f7f5f0" fill-rule="evenodd"/>
+    <path id="N-left" d="M405 11 L430 11 L430 15 L420 15 L420 95 L432 95 L432 99 L401 99 L401 95 L414 95 L414 15 L405 15 Z" fill="#f7f5f0"/>
+    <path id="N-diagonal" d="M422 11 L430 11 L484 77 L484 99 L480 99 L419 24 Z" fill="#f7f5f0"/>
+    <path id="N-right" d="M466 11 L499 11 L499 15 L487 15 L487 99 L481 99 L481 15 L466 15 Z" fill="#f7f5f0"/>
   </g>
 </svg>

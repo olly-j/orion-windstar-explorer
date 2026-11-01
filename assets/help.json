@@ -3,7 +3,7 @@
   "tips": {
     "guide": {
       "title": "A price guide, not a quote",
-      "text": "This is a cruise-price estimate for two adults in GBP, based on twice a published supplier price. It is not a confirmed quote. Ask the seller to confirm the cabin, price basis, flights, transfers, taxes and other required charges.",
+      "text": "This is a published price guide for two adults in GBP, based on twice an assumed per-person supplier price. The supplier category is kept exactly as published so that matching prices can be compared. Ask the seller to confirm the cabin, price basis, flights, transfers, taxes and other required charges.",
       "topic": "prices"
     },
     "drop": {
@@ -108,6 +108,10 @@
         {
           "heading": "Unknown does not mean zero",
           "text": "Taxes, port charges, gratuities, agency fees, flights and transfers may be included, excluded or unknown. Unknown amounts are not treated as free. Published All-Inclusive wording is a lead to verify for the exact fare."
+        },
+        {
+          "heading": "Supplier categories and duration",
+          "text": "Category labels such as Y or SP/OV are the supplier’s published codes. ORION preserves them to avoid comparing different price columns as if they were the same cabin. Confirm their meaning and cabin grade for your exact departure with the seller. Duration follows the supplier’s published number of days; estimated end dates are identified separately."
         }
       ]
     },

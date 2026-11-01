@@ -42,6 +42,10 @@ Cards, departure details, comparisons and question drafts retain pounds and penc
 
 Taxes, port charges, gratuities, agency fees, flights and transfers may be included, excluded or unknown. Unknown amounts are not treated as free. Published All-Inclusive wording is a lead to verify for the exact fare.
 
+### Supplier categories and duration
+
+Category labels such as Y or SP/OV are the supplier’s published codes. ORION preserves them to avoid comparing different price columns as if they were the same cabin. Confirm their meaning and cabin grade for your exact departure with the seller. Duration follows the supplier’s published number of days; estimated end dates are identified separately.
+
 ## What this index contains
 
 Published supplier products and dated evidence. ORION does not show a confirmed cabin inventory.
