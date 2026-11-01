@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"><symbol id="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" />
-</symbol><symbol id="arrow-up-right" viewBox="0 0 32 32"><path d="M132 11 L132 27 L149 27 L149 21 M140 19 L155 4 M145 4 L155 4 L155 14" transform="translate(-128 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="bookmark" viewBox="0 0 32 32"><path d="M71 4 L88 4 L88 28 L79.5 22 L71 28 Z" transform="translate(-64 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="calendar-days" viewBox="0 0 32 32"><path d="M99 7 L124 7 L124 27 L99 27 Z M99 13 L124 13 M105 3 L105 10 M118 3 L118 10 M105 18 L108 18 M115 18 L118 18 M105 23 L108 23" transform="translate(-96 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="chart-no-axes-combined" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+</symbol><symbol id="arrow-up-right" viewBox="0 0 32 32"><path d="M132 11 L132 27 L149 27 L149 21 M140 19 L155 4 M145 4 L155 4 L155 14" transform="translate(-128 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></symbol><symbol id="chart-no-axes-combined" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 16v5" />
   <path d="M16 14.639V21" />
   <path d="M20 10.656V21" />
@@ -14,10 +14,6 @@
   <path d="m15 18-6-6 6-6" />
 </symbol><symbol id="chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="m9 18 6-6-6-6" />
-</symbol><symbol id="circle-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
 </symbol><symbol id="clock-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="12" cy="12" r="10" />
   <path d="M12 6v6h4" />
@@ -25,10 +21,6 @@
   <path d="M10.94 5.274A7 7 0 0 1 15.71 10h1.79a4.5 4.5 0 0 1 4.222 6.057" />
   <path d="M18.796 18.81A4.5 4.5 0 0 1 17.5 19H9A7 7 0 0 1 5.79 5.78" />
   <path d="m2 2 20 20" />
-</symbol><symbol id="columns-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-  <rect width="18" height="18" x="3" y="3" rx="2" />
-  <path d="M9 3v18" />
-  <path d="M15 3v18" />
 </symbol><symbol id="compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="12" cy="12" r="10" />
   <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
@@ -95,10 +87,10 @@
   <path d="M16 12a4 4 0 0 0-4-4" />
   <path d="m19 5-1.256 1.256" />
   <path d="M20 12h2" />
-</symbol><symbol id="trending-down" viewBox="0 0 32 32"><path d="M3 8 L10 8 L14 15 L21 15 L25 22 M19 22 L25 22 L25 16" transform="translate(0 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+</symbol><symbol id="trending-down" viewBox="0 0 32 32"><path d="M3 8 L10 8 L14 15 L21 15 L25 22 M19 22 L25 22 L25 16" transform="translate(0 0)" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></symbol><symbol id="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M18 6 6 18" />
   <path d="m6 6 12 12" />
 </symbol><symbol id="bookmark-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
   <path d="m9 10 2 2 4-4" />
-</symbol></svg>
+</symbol><symbol id="notebook-pen" viewBox="0 0 32 32"><path d="M5 5 V27 M13 9 V27 M21 5 V23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" /></symbol><symbol id="file-check-2" viewBox="0 0 32 32"><path d="M7 3 H23 V29 H7 Z M11 10 H19 M11 16 H19 M11 22 H16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" /></symbol><symbol id="columns-3" viewBox="0 0 32 32"><path d="M3 8 H13 V25 H3 Z M19 8 H29 V25 H19 Z M16 3 V29" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" /></symbol><symbol id="circle-help" viewBox="0 0 32 32"><path d="M7 8 C7 1 25 1 25 10 C25 16 16 14 16 21 M16 26 V29" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" /></symbol><symbol id="calendar-days" viewBox="0 0 32 32"><path d="M4 7 H28 V29 H4 Z M4 14 H28 M10 3 V11 M22 3 V11 M10 20 H14 M18 20 H22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" /></symbol><symbol id="bookmark" viewBox="0 0 32 32"><path d="M8 3 H24 V29 L16 23 L8 29 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter" /></symbol></svg>

@@ -90,3 +90,5 @@ Composition references only, not included artwork: Outdo and Here* as featured b
 mediterranean-hero.jpg (1280px), mediterranean-card.jpg (640px), tahiti-card.jpg (640px), northern-europe-card.jpg (480px). Same source photographs and licence; resized and compressed for faster browsing. Original retained assets remain unchanged.
 
 ORION Craft identity, 31 October 2026: original VectorCraft horizon lettering and icon paths; DesignCraft sharing card; PhotoCraft adjustment/crop exports of the already credited regional photographs. Existing photograph licences remain applicable. No gallery imagery or standalone font files redistributed.
+
+ORION 5.0 / The Departure Index: original constructed VectorCraft wordmark and index icons; DesignCraft share layout; PhotoCraft regional-image derivatives. Original photograph attribution and Unsplash licence above remain. CSS uses installed Georgia/Arial fallbacks; no font binaries supplied. Reference agency/gallery artwork is not included.

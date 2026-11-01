@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "5.0.0",
   "tips": {
     "guide": {
       "title": "A price guide, not a quote",
@@ -47,7 +47,7 @@
       "topic": "verification"
     },
     "budget": {
-      "title": "Cruise guide for two",
+      "title": "Published guide for two",
       "text": "This filter uses twice the selected supplier price cell. It is not a total holiday budget and does not automatically include flights, hotels, transfers or unknown charges.",
       "topic": "filters"
     },
@@ -66,8 +66,8 @@
     {
       "id": "start",
       "section": "Start here",
-      "title": "Find a cruise worth a closer look",
-      "intro": "Choose the places and ships you like, compare prices and dates, then save the voyages worth checking.",
+      "title": "Start with a place. Keep the particulars.",
+      "intro": "Search a destination, ship or itinerary. Compare exact departures, then keep the evidence and questions together.",
       "blocks": [
         {
           "heading": "Start with your plans",
@@ -90,11 +90,11 @@
     {
       "id": "prices",
       "section": "Understand the evidence",
-      "title": "What the price means",
-      "intro": "Most amounts on ORION are research guides. The wording beside the price is part of the evidence.",
+      "title": "Read the figure and its basis",
+      "intro": "A guide is a starting point. Its currency, party size, category and observation date tell you what it can support.",
       "blocks": [
         {
-          "heading": "Estimated cruise price for two",
+          "heading": "Published guide for two",
           "text": "The headline guide is twice the lowest positive GBP cell in the supplier feed, or twice your selected column. This arithmetic does not prove the cell's occupancy basis, charges, availability or final payable amount. It does not automatically include flights, hotels or transfers."
         },
         {
@@ -103,7 +103,7 @@
         },
         {
           "heading": "Exact amounts and rounding",
-          "text": "Cards round guides to whole pounds for scanning. The detail tables and quote brief retain pounds and pence. A seller's explicit two-person quote must take precedence over doubling its rounded headline."
+          "text": "Cards, departure details, comparisons and question drafts retain pounds and pence. Chart axes may use whole-pound tick labels; the observation tables retain exact amounts. A seller's explicit two-person quote takes precedence over doubling its rounded per-person headline."
         },
         {
           "heading": "Unknown does not mean zero",
@@ -114,8 +114,8 @@
     {
       "id": "catalogue",
       "section": "Explore",
-      "title": "What is in the catalogue?",
-      "intro": "The catalogue contains published supplier products, not an inventory of available cabins.",
+      "title": "What this index contains",
+      "intro": "Published supplier products and dated evidence. ORION does not show a confirmed cabin inventory.",
       "blocks": [
         {
           "heading": "Products and departures",
@@ -138,8 +138,8 @@
     {
       "id": "filters",
       "section": "Explore",
-      "title": "Choose exactly what suits you",
-      "intro": "Select several ships or destinations, and enter your own trip length and budget. The preview shows how many voyages match before you apply.",
+      "title": "Make room for the right departure",
+      "intro": "Choose several ships or destinations and your complete travel window. Check the result count before applying.",
       "blocks": [
         {
           "heading": "Several ships or regions",
@@ -170,8 +170,8 @@
     {
       "id": "dates",
       "section": "Explore",
-      "title": "Choose dates with price context",
-      "intro": "There are two different ways to compare dates, and each answers a different question.",
+      "title": "Compare the dates, then the particulars",
+      "intro": "A month can contain very different voyages. The calendar and an itinerary’s dates answer different questions.",
       "blocks": [
         {
           "heading": "Price calendar",
@@ -190,8 +190,8 @@
     {
       "id": "history",
       "section": "Understand the evidence",
-      "title": "Read recorded price changes correctly",
-      "intro": "A voyage’s overview shows how its selected price has moved. The graph uses actual checks of the same listed category, with clear dates and estimates for two.",
+      "title": "What changed, and when?",
+      "intro": "Read the recorded supplier values for one category. Confirm their assumed per-person basis and the final quote before acting.",
       "blocks": [
         {
           "heading": "A useful first read",
@@ -218,8 +218,8 @@
     {
       "id": "sellers",
       "section": "Understand the evidence",
-      "title": "Compare seller advertisements",
-      "intro": "The same departure is a useful starting point. An equivalent purchase needs more checks.",
+      "title": "Similar dates are a starting point",
+      "intro": "The exact ship, date, category, package and final costs must line up before prices are comparable.",
       "blocks": [
         {
           "heading": "Match the important fields",
@@ -242,8 +242,8 @@
     {
       "id": "verification",
       "section": "Understand the evidence",
-      "title": "What qualifies as a verified bargain?",
-      "intro": "A large marketing percentage is not enough.",
+      "title": "What would prove a saving?",
+      "intro": "A percentage is only useful when the underlying purchases are genuinely comparable.",
       "blocks": [
         {
           "heading": "Research lead",
@@ -262,8 +262,8 @@
     {
       "id": "saved",
       "section": "Make a decision",
-      "title": "Save, compare and export a shortlist",
-      "intro": "Keep the voyages you are considering in one place.",
+      "title": "Keep a shortlist, keep the questions",
+      "intro": "Save exact departures on this browser. Compare them and prepare a local question draft to clarify the remaining differences.",
       "blocks": [
         {
           "heading": "Save a voyage",
@@ -280,14 +280,18 @@
         {
           "heading": "Bookmarks and price watches are separate",
           "text": "Saving a voyage creates a bookmark only. To follow a specific price condition, open the voyage and choose Watch price. Its conditions work on this browser while the website is open; no booking or enquiry is submitted."
+        },
+        {
+          "heading": "Turn a comparison into questions",
+          "text": "Choose up to three departures and open their comparison. Prepare comparison questions to keep the exact IDs, dates, observed categories and price basis in an editable draft. The draft is local, is not stored and sends nothing. Use Copy questions or select the text if clipboard access is unavailable. Confirm the cabin, availability, final GBP costs and inclusions directly with a seller."
         }
       ]
     },
     {
       "id": "offers",
       "section": "Make a decision",
-      "title": "Check benefits before combining them",
-      "intro": "A campaign's existence and your entitlement are separate facts.",
+      "title": "Read the benefit and the conditions",
+      "intro": "Check the dates, eligibility and exclusions for the exact departure. A public promotion does not establish entitlement.",
       "blocks": [
         {
           "heading": "Four separate states",
@@ -306,8 +310,8 @@
     {
       "id": "freshness",
       "section": "About this website",
-      "title": "When do prices update?",
-      "intro": "Collection and website publication are separate. The website shows the latest published edition, with the actual dates of its prices.",
+      "title": "Two clocks: the evidence and the edition",
+      "intro": "A source check and a website release are separate events. Both dates matter when deciding what to investigate.",
       "blocks": [
         {
           "heading": "Main cruise-price feed",
@@ -334,8 +338,8 @@
     {
       "id": "privacy",
       "section": "About this website",
-      "title": "Privacy, accessibility and controls",
-      "intro": "The website is public. Your saved choices stay on this device.",
+      "title": "Your research stays with you",
+      "intro": "Saved choices stay in this browser. ORION does not take bookings or send a seller the drafts you prepare.",
       "blocks": [
         {
           "heading": "What is public",
@@ -362,8 +366,8 @@
     {
       "id": "archives",
       "section": "Understand the evidence",
-      "title": "Use archived prices without guessing",
-      "intro": "An archived price tells you what a seller published on a particular day. It adds context to today’s research.",
+      "title": "An earlier figure is useful context",
+      "intro": "An archived advertisement records what a seller published on one day. Gaps remain gaps; it is not today’s price.",
       "blocks": [
         {
           "heading": "Start with the same voyage",
@@ -390,8 +394,8 @@
     {
       "id": "watches",
       "section": "Your shortlist",
-      "title": "Watch a price and test delivery",
-      "intro": "Set a target for one exact voyage and price category. Watches use newly published data while the page is open.",
+      "title": "A local watch, with a clear limit",
+      "intro": "Set a target for an exact departure and category. Checks use newly published data while this page is open.",
       "blocks": [
         {
           "heading": "Set your target",

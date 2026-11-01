@@ -2,9 +2,9 @@
 
 Public cruise research. No booking transactions.
 
-## Find a cruise worth a closer look
+## Start with a place. Keep the particulars.
 
-Choose the places and ships you like, compare prices and dates, then save the voyages worth checking.
+Search a destination, ship or itinerary. Compare exact departures, then keep the evidence and questions together.
 
 ### Start with your plans
 
@@ -22,11 +22,11 @@ Save your favourites and compare up to three voyages. Compare cabins and sellers
 
 Price updates explains the date of the main fare feed, seller checks and this website edition. Automatic publication remains off. Earlier prices are supporting context and stay separate from recent supplier observations.
 
-## What the price means
+## Read the figure and its basis
 
-Most amounts on ORION are research guides. The wording beside the price is part of the evidence.
+A guide is a starting point. Its currency, party size, category and observation date tell you what it can support.
 
-### Estimated cruise price for two
+### Published guide for two
 
 The headline guide is twice the lowest positive GBP cell in the supplier feed, or twice your selected column. This arithmetic does not prove the cell's occupancy basis, charges, availability or final payable amount. It does not automatically include flights, hotels or transfers.
 
@@ -36,15 +36,15 @@ The supplier combines codes such as SP/OV or S/B/IN across ships. ORION keeps th
 
 ### Exact amounts and rounding
 
-Cards round guides to whole pounds for scanning. The detail tables and quote brief retain pounds and pence. A seller's explicit two-person quote must take precedence over doubling its rounded headline.
+Cards, departure details, comparisons and question drafts retain pounds and pence. Chart axes may use whole-pound tick labels; the observation tables retain exact amounts. A seller's explicit two-person quote takes precedence over doubling its rounded per-person headline.
 
 ### Unknown does not mean zero
 
 Taxes, port charges, gratuities, agency fees, flights and transfers may be included, excluded or unknown. Unknown amounts are not treated as free. Published All-Inclusive wording is a lead to verify for the exact fare.
 
-## What is in the catalogue?
+## What this index contains
 
-The catalogue contains published supplier products, not an inventory of available cabins.
+Published supplier products and dated evidence. ORION does not show a confirmed cabin inventory.
 
 ### Products and departures
 
@@ -62,9 +62,9 @@ The saved feed provides broad Windstar coverage within its published date range.
 
 ORION opens 96 results at a time. At the bottom of the results, choose 48, 96, 240 or All matching voyages. Your choice stays in this browser. Photos load as you reach them; list view is useful for a large comparison. The full matching count stays visible.
 
-## Choose exactly what suits you
+## Make room for the right departure
 
-Select several ships or destinations, and enter your own trip length and budget. The preview shows how many voyages match before you apply.
+Choose several ships or destinations and your complete travel window. Check the result count before applying.
 
 ### Several ships or regions
 
@@ -90,9 +90,9 @@ Show voyages gives the matching count while you choose. Apply once ready. Closin
 
 Your selected ships, regions and ranges are stored in the page link. Reloading or sharing that link preserves the same filters. Saved voyages stay local to this browser.
 
-## Choose dates with price context
+## Compare the dates, then the particulars
 
-There are two different ways to compare dates, and each answers a different question.
+A month can contain very different voyages. The calendar and an itinerary’s dates answer different questions.
 
 ### Price calendar
 
@@ -106,9 +106,9 @@ Open All dates to compare departures with the same ship, itinerary, duration and
 
 Moving to another date changes the purchase. Compare flights, time off and the full trip cost before deciding that the cheaper departure is better value.
 
-## Read recorded price changes correctly
+## What changed, and when?
 
-A voyage’s overview shows how its selected price has moved. The graph uses actual checks of the same listed category, with clear dates and estimates for two.
+Read the recorded supplier values for one category. Confirm their assumed per-person basis and the final quote before acting.
 
 ### A useful first read
 
@@ -130,9 +130,9 @@ History starts when ORION first collected the price. Five readings over a few da
 
 A previous price can change again before you book. Source timestamps and any stale-data warning remain visible. A low raw fare still needs a current UK quote.
 
-## Compare seller advertisements
+## Similar dates are a starting point
 
-The same departure is a useful starting point. An equivalent purchase needs more checks.
+The exact ship, date, category, package and final costs must line up before prices are comparable.
 
 ### Match the important fields
 
@@ -150,9 +150,9 @@ Windstar UK and The Cruise Line are treated as one provider group. Iglu and Plan
 
 Copy quote request creates a concise brief with the exact product, your selected supplier column and the questions still unanswered. The website does not submit it or transmit your details.
 
-## What qualifies as a verified bargain?
+## What would prove a saving?
 
-A large marketing percentage is not enough.
+A percentage is only useful when the underlying purchases are genuinely comparable.
 
 ### Research lead
 
@@ -166,9 +166,9 @@ SILVER requires at least 25% and GOLD at least 40% below a fresh, independent, e
 
 An empty Verified view is intentional when those checks have not passed. You can still explore the full catalogue and promising leads without being told that an unproven saving is ready to book.
 
-## Save, compare and export a shortlist
+## Keep a shortlist, keep the questions
 
-Keep the voyages you are considering in one place.
+Save exact departures on this browser. Compare them and prepare a local question draft to clarify the remaining differences.
 
 ### Save a voyage
 
@@ -186,9 +186,13 @@ Export saved creates a CSV of the retained public values and source dates. It is
 
 Saving a voyage creates a bookmark only. To follow a specific price condition, open the voyage and choose Watch price. Its conditions work on this browser while the website is open; no booking or enquiry is submitted.
 
-## Check benefits before combining them
+### Turn a comparison into questions
 
-A campaign's existence and your entitlement are separate facts.
+Choose up to three departures and open their comparison. Prepare comparison questions to keep the exact IDs, dates, observed categories and price basis in an editable draft. The draft is local, is not stored and sends nothing. Use Copy questions or select the text if clipboard access is unavailable. Confirm the cabin, availability, final GBP costs and inclusions directly with a seller.
+
+## Read the benefit and the conditions
+
+Check the dates, eligibility and exclusions for the exact departure. A public promotion does not establish entitlement.
 
 ### Four separate states
 
@@ -202,9 +206,9 @@ Your agent quote may already include loyalty or All-Inclusive benefits. Onboard 
 
 The default list focuses on routes needing verification. Excluded examples can be revealed to explain regional restrictions or expired campaigns. No private account, invitation token or restricted document is exposed here.
 
-## When do prices update?
+## Two clocks: the evidence and the edition
 
-Collection and website publication are separate. The website shows the latest published edition, with the actual dates of its prices.
+A source check and a website release are separate events. Both dates matter when deciding what to investigate.
 
 ### Main cruise-price feed
 
@@ -226,9 +230,9 @@ Reloading opens the newest edition already on GitHub Pages. It does not run coll
 
 While this tab is visible, ORION checks the published website edition every five minutes and when you return to the tab. A newly published data file is loaded while preserving your filter choices. This does not contact a cruise seller or bypass the separate publication step.
 
-## Privacy, accessibility and controls
+## Your research stays with you
 
-The website is public. Your saved choices stay on this device.
+Saved choices stay in this browser. ORION does not take bookings or send a seller the drafts you prepare.
 
 ### What is public
 
@@ -250,9 +254,9 @@ Press / for search when outside a text field. Press Escape to close a dialog or 
 
 Use the appearance control for system, light or dark mode. Reduced-motion settings are respected. No information depends on animation or colour alone.
 
-## Use archived prices without guessing
+## An earlier figure is useful context
 
-An archived price tells you what a seller published on a particular day. It adds context to today’s research.
+An archived advertisement records what a seller published on one day. Gaps remain gaps; it is not today’s price.
 
 ### Start with the same voyage
 
@@ -274,9 +278,9 @@ Use 30 days, 90 days, 12 months or All found. An empty range offers a way back t
 
 Ask a seller to confirm the exact cabin, inclusions and final UK total. An archived reduction alone cannot trigger a verified-bargain badge or establish current availability.
 
-## Watch a price and test delivery
+## A local watch, with a clear limit
 
-Set a target for one exact voyage and price category. Watches use newly published data while the page is open.
+Set a target for an exact departure and category. Checks use newly published data while this page is open.
 
 ### Set your target
 
