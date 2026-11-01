@@ -66,6 +66,10 @@ The saved feed provides broad Windstar coverage within its published date range.
 
 ORION opens 96 results at a time. At the bottom of the results, choose 48, 96, 240 or All matching voyages. Your choice stays in this browser. Photos load as you reach them; list view is useful for a large comparison. The full matching count stays visible.
 
+### Itineraries and route maps
+
+Itinerary & route keeps the departure page within reach. Where reviewed stop facts are retained, ORION shows them with source dates and links. Elsewhere, open the full itinerary on the exact publisher page. External maps are seller illustrations and are not verified navigational tracks. Stops and timings can change.
+
 ## Make room for the right departure
 
 Choose several ships or destinations and your complete travel window. Check the result count before applying.
@@ -136,7 +140,11 @@ A previous price can change again before you book. Source timestamps and any sta
 
 ## Similar dates are a starting point
 
-The exact ship, date, category, package and final costs must line up before prices are comparable.
+Open the exact sailing from its price panel or the visible voyage actions. Read the current seller page before relying on an observed guide.
+
+### Open the real sailing page
+
+View sailing & current prices goes to an observed dated publisher or seller page, not a search engine or homepage. Publisher IDs and dates are matched; a different title is flagged because package wording can vary. The supplier index confirms the link was listed, not that every page was individually fetched or that a cabin is available. The seller page has its own current price and booking or enquiry options.
 
 ### Match the important fields
 

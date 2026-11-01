@@ -136,6 +136,10 @@
         {
           "heading": "See more voyages without paging",
           "text": "ORION opens 96 results at a time. At the bottom of the results, choose 48, 96, 240 or All matching voyages. Your choice stays in this browser. Photos load as you reach them; list view is useful for a large comparison. The full matching count stays visible."
+        },
+        {
+          "heading": "Itineraries and route maps",
+          "text": "Itinerary & route keeps the departure page within reach. Where reviewed stop facts are retained, ORION shows them with source dates and links. Elsewhere, open the full itinerary on the exact publisher page. External maps are seller illustrations and are not verified navigational tracks. Stops and timings can change."
         }
       ]
     },
@@ -223,8 +227,12 @@
       "id": "sellers",
       "section": "Understand the evidence",
       "title": "Similar dates are a starting point",
-      "intro": "The exact ship, date, category, package and final costs must line up before prices are comparable.",
+      "intro": "Open the exact sailing from its price panel or the visible voyage actions. Read the current seller page before relying on an observed guide.",
       "blocks": [
+        {
+          "heading": "Open the real sailing page",
+          "text": "View sailing & current prices goes to an observed dated publisher or seller page, not a search engine or homepage. Publisher IDs and dates are matched; a different title is flagged because package wording can vary. The supplier index confirms the link was listed, not that every page was individually fetched or that a cabin is available. The seller page has its own current price and booking or enquiry options."
+        },
         {
           "heading": "Match the important fields",
           "text": "Match the ship, departure, cruise nights, cabin grade, occupancy, inclusions, taxes, required fees, cancellation conditions, payment currency and UK residency eligibility. Preserve a seller's explicit two-adult total when supplied."
