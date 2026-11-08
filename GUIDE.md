@@ -8,11 +8,11 @@ Search a destination, ship or itinerary. Compare exact departures, then keep the
 
 ### Start with your plans
 
-Choose several destinations or ships. Use Filters to enter any trip-length range, exact duration or budget. You can see the matching count before applying.
+Search a destination, ship, itinerary or agent name. Choose several destinations or ships. Use Filters to enter a trip-length range, exact duration or budget. Compare sellers selects departures with usable current agent advertisements.
 
 ### Understand the price in a glance
 
-Open a voyage for its price guide, a graph of recorded prices and any lower-priced alternative dates. Estimated costs are for two people. The source and exact category are available under Price basis, source and dates.
+The card names the source of its lowest recorded guide for two. Current source-checked agent prices remain visible even when the supplier reference is lower. Open Cabins & sellers for the dated adverts and separate supplier categories.
 
 ### Compare and shortlist
 
@@ -28,11 +28,11 @@ A guide is a starting point. Its currency, party size, category and observation 
 
 ### Published guide for two
 
-The guide for two doubles the lowest supplier price or your selected supplier category. For additional publisher listings it doubles the advertised per-person figure, while displaying the original value, source and observation date. Confirm occupancy, package contents, mandatory charges and the final payable UK total with the seller.
+The default guide selects the lowest supplier reference or eligible agent advert. Agent advertisements must have exact product attribution checked against retained source evidence and an observation no older than 24 hours. An explicit two-person amount takes precedence; otherwise ORION doubles the per-person amount and labels the estimate. Selecting a supplier category restricts the guide and budget to that exact column.
 
 ### Cabin columns
 
-The supplier combines codes such as SP/OV or S/B/IN across ships. ORION keeps those literal codes to avoid promising the wrong room. In Cabins & sellers, check the advertised grade against the actual ship and ask the agent to confirm it in writing.
+The supplier combines codes such as SP/OV or S/B/IN across ships. ORION keeps those literal codes. Agent adverts retain their own cabin and package wording, with no inferred equivalence to a supplier category. Confirm the actual cabin grade and inclusions for your exact departure.
 
 ### Exact amounts and rounding
 
@@ -88,7 +88,7 @@ Enter the minimum and maximum number of days, such as 9 to 12. Enter the same nu
 
 ### Any budget
 
-Type any minimum or maximum price for two. These are cruise-only estimates and may exclude flights, transfers and mandatory charges. A maximum of zero finds no positive-priced cruises; a blank field means no limit.
+Type any minimum or maximum guide for two. The default uses the lowest eligible supplier or agent guide, with its source visible. A selected supplier category uses only that category. These amounts may exclude flights, hotels, transfers and required charges. Zero finds no positive-priced cruises; blank means no limit.
 
 ### Preview, apply or cancel
 
@@ -128,7 +128,7 @@ Select a supplier column in Price history. The chart plots only saved timestamp-
 
 ### Seller observations
 
-Choose Seller observations to see the retained seller prices matched exactly to that voyage. Select the seller, cabin and package basis. The chart and table preserve every recorded value, with the source link and observation time. These series remain separate from supplier price-drop calculations and recovered archive captures.
+Opening history from an agent-led price selects that exact source observation and its seller, cabin and package series. The chart and main table include only observations with validated source attribution. Withdrawn or unresolved values remain in an audit disclosure with their original amounts, dates and correction references. Every retained observation stays accessible.
 
 ### A drop can apply to another cabin
 
@@ -140,7 +140,7 @@ History starts when ORION first collected the price. Five readings over a few da
 
 ### Latest successfully observed
 
-A previous price can change again before you book. Source timestamps and any stale-data warning remain visible. A low raw fare still needs a current UK quote.
+Source validation establishes which published advert was observed for a product. It does not confirm current cabin availability or final cost. Current discovery excludes agent adverts older than 24 hours; their dated historical evidence remains accessible.
 
 ### Source records awaiting an exact match
 
@@ -160,7 +160,7 @@ Match the ship, departure, cruise nights, cabin grade, occupancy, inclusions, ta
 
 ### Dated advertising, not live checkout
 
-The tables show when the advert was observed, its price surface and any conflicts. Rows marked Unverified are not confirmed available quotes. Visit the source or request a written quotation before acting.
+Current agent adverts appear first with provider, category, per-person amount, pair basis and original observation time. They require exact source attribution and an observation within 24 hours. The separate retained-evidence disclosure preserves withdrawn, unresolved, conflicted and older records; these cannot determine the current guide or budget.
 
 ### Shared brands count once
 
@@ -168,7 +168,7 @@ Windstar UK and The Cruise Line are treated as one provider group. Iglu and Plan
 
 ### A useful next step
 
-Copy quote request creates a concise brief with the exact product, your selected supplier column and the questions still unanswered. The website does not submit it or transmit your details.
+Copy quote request preserves the selected guide, provider, observation date and source-specific category. A supplier reference remains separate. Unknown cabin equivalence and package terms are explicit questions. The draft stays local until you choose how to use it.
 
 ## What would prove a saving?
 
@@ -200,11 +200,11 @@ Select Compare on up to three voyages, then open the comparison tray. Review dat
 
 ### Export for your records
 
-Export saved creates a CSV of the retained public values and source dates. It is a snapshot for research, not a quote. Export it before clearing saved voyages. Saving or comparing does not subscribe you to price alerts.
+Export saved creates a CSV with each selected guide, provider or supplier category, original observation time, source link and price basis. It is a research snapshot. Your active supplier-category filter is preserved. Export before clearing saved voyages.
 
 ### Bookmarks and price watches are separate
 
-Saving a voyage creates a bookmark only. To follow a specific price condition, open the voyage and choose Watch price. Its conditions work on this browser while the website is open; no booking or enquiry is submitted.
+Saving a voyage creates a bookmark. Track supplier names the actual supplier category used for a price target, including when an agent leads the card. Agent lead-ins do not create supplier-category watches. Watches check this browser while the website is open.
 
 ### Turn a comparison into questions
 
@@ -236,7 +236,7 @@ The local collector runs hourly, but the main Windstar price feed currently has 
 
 ### Seller-price checks
 
-Agencies have their own check schedules. Their latest retained observation can be newer than the main cruise-price feed. Individual advertisements keep their own dates.
+Agencies have their own collection schedules. Each source-checked advertisement keeps its original observation time, including when saved source documents are reviewed later. Only observations no older than 24 hours contribute to current agent guides. Older evidence remains in dated history and audit tables.
 
 ### Publishing the website
 
@@ -304,7 +304,7 @@ Choose a departure and supplier category, then save a target for two. Tracked pr
 
 ### Which prices support a watch
 
-A watch needs a published supplier category. Additional publisher advertisements can be compared and saved. A target requires suitable supplier-category evidence for that exact product.
+A watch tracks one literal supplier category for an exact departure. Its button, selected category and current amount identify that supplier basis. An agent-led headline can have a different amount; it is never silently used as a supplier watch target. Agent adverts remain available for comparison and saved research.
 
 ### Save now, check when evidence is ready
 

@@ -20,7 +20,20 @@
  function toParams(raw){const s=normalise(raw),p=new URLSearchParams();for(const k of Object.keys(scalarDefaults)){if(s[k]!==scalarDefaults[k]&&s[k]!=='')p.set(k,String(s[k]));}for(const k of ['ships','regions'])for(const value of s[k])p.append(k,value);return p;}
  function rangeErrors(s){const errors={};if(s.from&&s.to&&s.from>s.to)errors.to='Choose an end date on or after the start date.';if(s.minDays&&s.maxDays&&Number(s.minDays)>Number(s.maxDays))errors.maxDays='Maximum length must be at least the minimum.';if(s.minBudget&&s.budget&&Number(s.minBudget)>Number(s.budget))errors.budget='Maximum budget must be at least the minimum.';return errors;}
  function fare(r,s){const fs=Array.isArray(r.fares)?r.fares:[];const found=s.cabin?fs.find(f=>f[0]===s.cabin):fs.reduce((a,b)=>!a||b[1]<a[1]?b:a,null);return found?{column:found[0],amount:found[1]}:null;}
- function guide(r,s){const f=fare(r,s);if(f)return {...f,source:'supplier'};const a=r.advertised_price;if(s.cabin||r.source_kind!=='supplemental_advertisement'||['past_departure','not_in_latest_feed'].includes(r.catalogue_status)||!a||a.currency!=='GBP'||a.unit!=='per_person_advertised'||!Number.isSafeInteger(a.amount_pence)||a.amount_pence<=0)return null;return {column:null,amount:a.amount_pence,source:'seller',provider:a.provider,observed_at:a.observed_at};}
+ const AGENT_METHODS=new Set(['bounded_catalogue_card','wexas_primary_category','pure_card_primary_price','iglu_primary_category','reviewed_publisher_page']);
+ const MAX_AGENT_AGE_HOURS=24,hash64=value=>typeof value==='string'&&/^[a-f0-9]{64}$/.test(value);
+ const publicURL=value=>{try{const u=new URL(value);return typeof value==='string'&&u.protocol==='https:'&&!u.username&&!u.password&&!u.search&&!u.hash}catch{return false}};
+ function validAgentOffer(a){return !!a&&typeof a==='object'&&!Array.isArray(a)&&hash64(a.id)&&typeof a.provider==='string'&&!!a.provider&&typeof a.provider_group==='string'&&!!a.provider_group&&publicURL(a.url)&&publicURL(a.evidence_url)&&typeof a.cabin==='string'&&typeof a.basis==='string'&&a.currency==='GBP'&&a.unit==='per_person_advertised'&&Number.isSafeInteger(a.amount_pence)&&a.amount_pence>0&&(a.pair_total_pence==null||Number.isSafeInteger(a.pair_total_pence)&&a.pair_total_pence>0)&&a.availability_verified===false&&a.costs_verified===false&&a.attribution?.state==='validated'&&AGENT_METHODS.has(a.attribution.method)&&hash64(a.attribution.evidence_sha256)&&hash64(a.attribution.observation_id)&&typeof a.observed_at==='string'&&Number.isFinite(Date.parse(a.observed_at));}
+ function agentPair(a){return Number.isSafeInteger(a?.pair_total_pence)&&a.pair_total_pence>0?a.pair_total_pence:a?.amount_pence*2;}
+ function agentOffers(r,now=Date.now()){if(['past_departure','not_in_latest_feed'].includes(r.catalogue_status))return [];return (Array.isArray(r.agent_offers)?r.agent_offers:[]).filter(a=>validAgentOffer(a)&&Date.parse(a.observed_at)<=now&&now-Date.parse(a.observed_at)<=MAX_AGENT_AGE_HOURS*3600000).slice().sort((a,b)=>agentPair(a)-agentPair(b)||Date.parse(b.observed_at)-Date.parse(a.observed_at)||a.provider.localeCompare(b.provider)||a.id.localeCompare(b.id));}
+ function guide(r,s={},now=Date.now()){
+  const f=fare(r,s),supplier=f?{...f,source:'supplier',pair_amount:f.amount*2,pair_explicit:false}:null;
+  if(s.cabin)return supplier;
+  const a=agentOffers(r,now)[0];
+  if(a&&(!supplier||agentPair(a)<supplier.pair_amount))return {column:null,amount:a.amount_pence,pair_amount:agentPair(a),pair_explicit:Number.isSafeInteger(a.pair_total_pence),source:'agent',provider:a.provider,provider_group:a.provider_group,observed_at:a.observed_at,url:a.url,cabin:a.cabin,basis:a.basis,offer:a};
+  return supplier;
+ }
+ function pair(r,s={},now=Date.now()){return guide(r,s,now)?.pair_amount??null;}
  // ISO calendar-day arithmetic avoids the spring/autumn clock-change bug.
  function endDate(r){
   if(!date(r.departure)||['conflicting_published_dates','unverified_package_dates'].includes(r.end_date_basis))return null;
@@ -41,8 +54,8 @@
  function matches(r,s){if(s.ships.length&&!s.ships.includes(r.ship))return false;if(s.regions.length&&!s.regions.includes(r.region))return false;if(s.kind&&s.kind!==r.kind)return false;if(!withinDates(r,s))return false;
   const n=Number(r.duration);if(s.minDays&&n<Number(s.minDays)||s.maxDays&&n>Number(s.maxDays))return false;
   const f=guide(r,s);if(!f&&(s.cabin||s.minBudget!==''||s.budget!==''))return false;
-  if(f){const pair=f.amount*2;if(s.minBudget!==''&&pair<Math.round(Number(s.minBudget)*100))return false;if(s.budget!==''&&pair>Math.round(Number(s.budget)*100))return false;}
+  if(f){const pair=f.pair_amount;if(s.minBudget!==''&&pair<Math.round(Number(s.minBudget)*100))return false;if(s.budget!==''&&pair>Math.round(Number(s.budget)*100))return false;}
   return true;
  }
- root.ORIONFilters={empty,normalise,fromParams,toParams,rangeErrors,matches,fare,guide,choices,date,endDate,withinDates};
+ root.ORIONFilters={empty,normalise,fromParams,toParams,rangeErrors,matches,fare,guide,pair,agentOffers,agentPair,validAgentOffer,MAX_AGENT_AGE_HOURS,choices,date,endDate,withinDates};
 })(globalThis);

@@ -1,9 +1,9 @@
 {
-  "version": "5.0.0",
+  "version": "5.4.1",
   "tips": {
     "guide": {
-      "title": "A price guide, not a quote",
-      "text": "This is a published price guide for two adults in GBP, based on twice an assumed per-person supplier price. The supplier category is kept exactly as published so that matching prices can be compared. Ask the seller to confirm the cabin, price basis, flights, transfers, taxes and other required charges.",
+      "title": "The source behind the guide",
+      "text": "The default guide for two uses the lowest supplier reference or source-checked agent advertisement observed within 24 hours. Agent amounts keep their original per-person basis; an explicit pair total is preserved, otherwise the guide doubles the advert. The provider and observation time are shown. Confirm cabin, availability, package terms, flights, transfers and final charges.",
       "topic": "prices"
     },
     "drop": {
@@ -17,8 +17,8 @@
       "topic": "dates"
     },
     "agency": {
-      "title": "Retained seller advertisements",
-      "text": "These public prices are matched to the ship, departure and duration. Check cabin, package, price timestamp, UK eligibility and final total before treating two prices as comparable.",
+      "title": "Current source-checked agent prices",
+      "text": "Compare sellers selects voyages with at least one exact-product, source-validated agent advertisement observed within 24 hours. Provider names, original amounts and dates stay visible. Shared brands count within their provider group. Retained unresolved evidence is available separately.",
       "topic": "sellers"
     },
     "duration": {
@@ -32,8 +32,8 @@
       "topic": "prices"
     },
     "freshness": {
-      "title": "Three separate dates",
-      "text": "Supplier snapshot is when fare data was collected. Collector success can refer to other sources. Website build is when this edition was prepared. Reloading checks for a published edition; it does not fetch a new supplier quote.",
+      "title": "Each source keeps its own date",
+      "text": "Supplier snapshot, individual agent observation and website build are separate dates. Agent advertisements stop contributing to current guides after 24 hours. Reloading checks the published edition; it does not fetch a new seller quote.",
       "topic": "freshness"
     },
     "saved": {
@@ -47,8 +47,8 @@
       "topic": "verification"
     },
     "budget": {
-      "title": "Published guide for two",
-      "text": "This filter uses twice the selected supplier price cell. It is not a total holiday budget and does not automatically include flights, hotels, transfers or unknown charges.",
+      "title": "A source-labelled guide for two",
+      "text": "Without a cabin filter, the budget uses the lowest eligible supplier or agent guide for two. An explicit supplier cabin selection uses only that supplier category. Agent lead-in categories are never mapped to supplier columns. Flights, hotels, transfers and final charges need confirmation.",
       "topic": "filters"
     },
     "offers": {
@@ -71,11 +71,11 @@
       "blocks": [
         {
           "heading": "Start with your plans",
-          "text": "Choose several destinations or ships. Use Filters to enter any trip-length range, exact duration or budget. You can see the matching count before applying."
+          "text": "Search a destination, ship, itinerary or agent name. Choose several destinations or ships. Use Filters to enter a trip-length range, exact duration or budget. Compare sellers selects departures with usable current agent advertisements."
         },
         {
           "heading": "Understand the price in a glance",
-          "text": "Open a voyage for its price guide, a graph of recorded prices and any lower-priced alternative dates. Estimated costs are for two people. The source and exact category are available under Price basis, source and dates."
+          "text": "The card names the source of its lowest recorded guide for two. Current source-checked agent prices remain visible even when the supplier reference is lower. Open Cabins & sellers for the dated adverts and separate supplier categories."
         },
         {
           "heading": "Compare and shortlist",
@@ -95,11 +95,11 @@
       "blocks": [
         {
           "heading": "Published guide for two",
-          "text": "The guide for two doubles the lowest supplier price or your selected supplier category. For additional publisher listings it doubles the advertised per-person figure, while displaying the original value, source and observation date. Confirm occupancy, package contents, mandatory charges and the final payable UK total with the seller."
+          "text": "The default guide selects the lowest supplier reference or eligible agent advert. Agent advertisements must have exact product attribution checked against retained source evidence and an observation no older than 24 hours. An explicit two-person amount takes precedence; otherwise ORION doubles the per-person amount and labels the estimate. Selecting a supplier category restricts the guide and budget to that exact column."
         },
         {
           "heading": "Cabin columns",
-          "text": "The supplier combines codes such as SP/OV or S/B/IN across ships. ORION keeps those literal codes to avoid promising the wrong room. In Cabins & sellers, check the advertised grade against the actual ship and ask the agent to confirm it in writing."
+          "text": "The supplier combines codes such as SP/OV or S/B/IN across ships. ORION keeps those literal codes. Agent adverts retain their own cabin and package wording, with no inferred equivalence to a supplier category. Confirm the actual cabin grade and inclusions for your exact departure."
         },
         {
           "heading": "Exact amounts and rounding",
@@ -163,7 +163,7 @@
         },
         {
           "heading": "Any budget",
-          "text": "Type any minimum or maximum price for two. These are cruise-only estimates and may exclude flights, transfers and mandatory charges. A maximum of zero finds no positive-priced cruises; a blank field means no limit."
+          "text": "Type any minimum or maximum guide for two. The default uses the lowest eligible supplier or agent guide, with its source visible. A selected supplier category uses only that category. These amounts may exclude flights, hotels, transfers and required charges. Zero finds no positive-priced cruises; blank means no limit."
         },
         {
           "heading": "Preview, apply or cancel",
@@ -211,7 +211,7 @@
         },
         {
           "heading": "Seller observations",
-          "text": "Choose Seller observations to see the retained seller prices matched exactly to that voyage. Select the seller, cabin and package basis. The chart and table preserve every recorded value, with the source link and observation time. These series remain separate from supplier price-drop calculations and recovered archive captures."
+          "text": "Opening history from an agent-led price selects that exact source observation and its seller, cabin and package series. The chart and main table include only observations with validated source attribution. Withdrawn or unresolved values remain in an audit disclosure with their original amounts, dates and correction references. Every retained observation stays accessible."
         },
         {
           "heading": "A drop can apply to another cabin",
@@ -223,7 +223,7 @@
         },
         {
           "heading": "Latest successfully observed",
-          "text": "A previous price can change again before you book. Source timestamps and any stale-data warning remain visible. A low raw fare still needs a current UK quote."
+          "text": "Source validation establishes which published advert was observed for a product. It does not confirm current cabin availability or final cost. Current discovery excludes agent adverts older than 24 hours; their dated historical evidence remains accessible."
         },
         {
           "heading": "Source records awaiting an exact match",
@@ -247,7 +247,7 @@
         },
         {
           "heading": "Dated advertising, not live checkout",
-          "text": "The tables show when the advert was observed, its price surface and any conflicts. Rows marked Unverified are not confirmed available quotes. Visit the source or request a written quotation before acting."
+          "text": "Current agent adverts appear first with provider, category, per-person amount, pair basis and original observation time. They require exact source attribution and an observation within 24 hours. The separate retained-evidence disclosure preserves withdrawn, unresolved, conflicted and older records; these cannot determine the current guide or budget."
         },
         {
           "heading": "Shared brands count once",
@@ -255,7 +255,7 @@
         },
         {
           "heading": "A useful next step",
-          "text": "Copy quote request creates a concise brief with the exact product, your selected supplier column and the questions still unanswered. The website does not submit it or transmit your details."
+          "text": "Copy quote request preserves the selected guide, provider, observation date and source-specific category. A supplier reference remains separate. Unknown cabin equivalence and package terms are explicit questions. The draft stays local until you choose how to use it."
         }
       ]
     },
@@ -295,11 +295,11 @@
         },
         {
           "heading": "Export for your records",
-          "text": "Export saved creates a CSV of the retained public values and source dates. It is a snapshot for research, not a quote. Export it before clearing saved voyages. Saving or comparing does not subscribe you to price alerts."
+          "text": "Export saved creates a CSV with each selected guide, provider or supplier category, original observation time, source link and price basis. It is a research snapshot. Your active supplier-category filter is preserved. Export before clearing saved voyages."
         },
         {
           "heading": "Bookmarks and price watches are separate",
-          "text": "Saving a voyage creates a bookmark only. To follow a specific price condition, open the voyage and choose Watch price. Its conditions work on this browser while the website is open; no booking or enquiry is submitted."
+          "text": "Saving a voyage creates a bookmark. Track supplier names the actual supplier category used for a price target, including when an agent leads the card. Agent lead-ins do not create supplier-category watches. Watches check this browser while the website is open."
         },
         {
           "heading": "Turn a comparison into questions",
@@ -339,7 +339,7 @@
         },
         {
           "heading": "Seller-price checks",
-          "text": "Agencies have their own check schedules. Their latest retained observation can be newer than the main cruise-price feed. Individual advertisements keep their own dates."
+          "text": "Agencies have their own collection schedules. Each source-checked advertisement keeps its original observation time, including when saved source documents are reviewed later. Only observations no older than 24 hours contribute to current agent guides. Older evidence remains in dated history and audit tables."
         },
         {
           "heading": "Publishing the website",
@@ -419,7 +419,7 @@
       "blocks": [
         {
           "heading": "Which prices support a watch",
-          "text": "A watch needs a published supplier category. Additional publisher advertisements can be compared and saved. A target requires suitable supplier-category evidence for that exact product."
+          "text": "A watch tracks one literal supplier category for an exact departure. Its button, selected category and current amount identify that supplier basis. An agent-led headline can have a different amount; it is never silently used as a supplier watch target. Agent adverts remain available for comparison and saved research."
         },
         {
           "heading": "Save now, check when evidence is ready",

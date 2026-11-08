@@ -17,6 +17,25 @@ function relatedProducts(products,selected){const key=discoveryKey(selected);ret
 function sameDateComparison(a,b){return !!a.family_id&&a.family_id===b.family_id&&['ship','kind','duration','from_port','to_port'].every(k=>a[k]===b[k]);}
 function historyColumns(p){return [...new Set([...(p.fares||[]).map(cell=>cell[0]),...Object.keys(p.price_history||{})])];}
 function isRetired(p,today){return ['past_departure','not_in_latest_feed'].includes(p.catalogue_status)||!!today&&p.departure<today;}
+function sellerPointAttribution(product,pointId){
+ const map=product?.seller_history_attribution,entry=object(map?.observations)?map.observations[pointId]:null;
+ const fallback={state:'unverified',reason:typeof map?.default_reason==='string'?map.default_reason:'Source attribution has not been validated',replacement_ids:[]};
+ if(!object(map)||map.schema_version!==1||map.default_state!=='unverified'||!object(entry))return fallback;
+ if(entry.state==='withdrawn')return {state:'withdrawn',reason:typeof entry.reason==='string'?entry.reason:'Source attribution was withdrawn',replacement_ids:Array.isArray(entry.replacement_ids)?entry.replacement_ids.filter(x=>typeof x==='string'&&/^[a-f0-9]{16}$/.test(x)):[]};
+ const proof=typeof entry.proof_id==='string'&&/^[a-f0-9]{16}$/.test(entry.proof_id)&&object(map.proofs)?map.proofs[entry.proof_id]:null;
+ if(entry.state==='validated'&&object(proof)&&['bounded_catalogue_card','wexas_primary_category','pure_card_primary_price','iglu_primary_category','reviewed_publisher_page'].includes(proof.method)&&/^[a-f0-9]{64}$/.test(proof.evidence_sha256||''))return {state:'validated',reason:'Exact source attribution checked',proof_id:entry.proof_id,replacement_ids:[]};
+ return {...fallback,reason:typeof entry.reason==='string'?entry.reason:fallback.reason};
+}
+function validateAgentOffers(product){
+ if(product.agent_offers===undefined)return;
+ if(!Array.isArray(product.agent_offers))throw Error('Invalid agent offers');
+ const ids=new Set(),url=value=>{try{const u=new URL(value);return typeof value==='string'&&u.protocol==='https:'&&!u.username&&!u.password&&!u.search&&!u.hash}catch{return false}},hash=value=>typeof value==='string'&&/^[a-f0-9]{64}$/.test(value);
+ for(const a of product.agent_offers){
+  if(!object(a)||!hash(a.id)||ids.has(a.id)||typeof a.provider!=='string'||!a.provider||typeof a.provider_group!=='string'||!a.provider_group||!url(a.url)||!url(a.evidence_url)||timestamp(a.observed_at)===null||typeof a.cabin!=='string'||typeof a.basis!=='string'||a.currency!=='GBP'||a.unit!=='per_person_advertised'||!Number.isSafeInteger(a.amount_pence)||a.amount_pence<=0||(a.pair_total_pence!=null&&(!Number.isSafeInteger(a.pair_total_pence)||a.pair_total_pence<=0))||a.availability_verified!==false||a.costs_verified!==false||!object(a.attribution)||a.attribution.state!=='validated'||typeof a.attribution.method!=='string'||!a.attribution.method||!hash(a.attribution.evidence_sha256)||!hash(a.attribution.observation_id))throw Error('Agent guide lacks validated primary source attribution');
+  ids.add(a.id);
+ }
+ if(isRetired(product)&&product.agent_offers.length)throw Error('Retained voyage cannot publish an active agent guide');
+}
 function retiredProduct(p,today,observedAt=null){
  if(!isRetired(p,today))return p;
  // This is a display projection. Keep the source and observation history intact.
@@ -24,7 +43,7 @@ function retiredProduct(p,today,observedAt=null){
   last_low_pence:Number.isSafeInteger(p.low_pence)&&p.low_pence>0?p.low_pence:(p.last_low_pence??null),
   last_observed_at:p.last_observed_at||p.feed_observed_at||observedAt||null,
   last_published_fares:(p.fares?.length?p.fares:p.last_published_fares||[]).map(cell=>cell.slice()),
-  fares:[],low_pence:null,advertised_price:null,changes:{},drop:null};
+  fares:[],low_pence:null,advertised_price:null,last_agent_offers:p.agent_offers?.length?p.agent_offers:p.last_agent_offers||[],agent_offers:[],changes:{},drop:null};
 }
 function partitionProducts(data,today){const current=[],retired=[];for(const p of [...data.products,...(data.retired_products||[])]){if(isRetired(p,today))retired.push(retiredProduct(p,today,data.feed?.observed_at));else current.push({...p});}return {current,retired};}
 function freshness(data,now=Date.now()){
@@ -57,6 +76,7 @@ function validate(data){
   if(p.history_count!==undefined&&(!Number.isSafeInteger(p.history_count)||p.history_count<0))throw Error('Invalid history count');
   if(retiredIds.has(p.id)&&(!isRetired(p)||p.fares.length||p.low_pence!==null))throw Error('Retained voyage cannot publish a current fare');
   if(!Number.isSafeInteger(p.duration)||p.duration<1||!object(p.changes)||!Number.isSafeInteger(p.archive_count)||p.archive_count<0)throw Error('Invalid voyage dimensions');
+  validateAgentOffers(p);
   ids.add(p.id);
   if(!dataPath(data.detail_files[p.ship]))throw Error('Missing or invalid ship evidence file');
   const columns=new Set();
@@ -73,6 +93,6 @@ function validate(data){
  return data;
 }
 function matchesManifest(data,manifest){return !manifest||(data.release===manifest.release&&data.built_at===manifest.built_at&&dataPath(manifest.data_file));}
-return Object.freeze({timestamp,date,dataPath,freshness,validate,matchesManifest,discoveryKey,relatedProducts,sameDateComparison,historyColumns,isRetired,retiredProduct,partitionProducts,LIMIT});
+return Object.freeze({timestamp,date,dataPath,freshness,validate,matchesManifest,discoveryKey,relatedProducts,sameDateComparison,historyColumns,isRetired,retiredProduct,partitionProducts,sellerPointAttribution,validateAgentOffers,LIMIT});
 });
 
