@@ -232,11 +232,11 @@ A source check and a website release are separate events. Both dates matter when
 
 ### Main cruise-price feed
 
-The local collector runs hourly, but the main Windstar price feed currently has a 20-hour minimum between checks. A run before that deadline leaves the last successful price check unchanged. The next permitted check is shown under Price updates. Actual checks also depend on the computer being online and the source responding.
+The main Windstar price feed has a minimum interval between checks. The next permitted time appears under Price updates. Recorded check dates describe completed activity; this saved edition does not verify whether the collector is currently running. Further checks depend on the collector being enabled, the computer being online and the source responding.
 
 ### Seller-price checks
 
-Agencies have their own collection schedules. Each source-checked advertisement keeps its original observation time, including when saved source documents are reviewed later. Only observations no older than 24 hours contribute to current agent guides. Older evidence remains in dated history and audit tables.
+Each agency record has its own observation date. Reviewing a saved source capture preserves its original capture time. Only source-checked agent observations no older than 24 hours contribute to current guides. Older evidence remains in dated history and audit tables. Collection and manual publication are separate operations.
 
 ### Publishing the website
 

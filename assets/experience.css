@@ -173,6 +173,13 @@ textarea{width:100%;line-height:1.6;resize:vertical}
 .data-table td{font-size:14px;padding:16px 14px;overflow-wrap:anywhere;vertical-align:top}
 .data-table small,.data-table td strong{font-size:13px}
 .list-title{font:400 23px/1.25 var(--serif);min-height:44px}
+/* Keep expanded seller qualifications within readable result columns. */
+#results .list-wrap .data-table{table-layout:fixed;min-width:1100px}
+#results .list-wrap .data-table th:nth-child(1),#results .list-wrap .data-table th:nth-child(3){width:28%}
+#results .list-wrap .data-table th:nth-child(2),#results .list-wrap .data-table th:nth-child(5){width:12%}
+#results .list-wrap .data-table th:nth-child(4){width:20%}
+#results .list-wrap .data-table .money{white-space:normal}
+#results .list-wrap .data-table .money>strong{white-space:nowrap}
 .row-actions{flex-wrap:wrap;gap:8px}
 .results-capacity,.pagination{font-size:14px;gap:12px;flex-wrap:wrap}
 .results-capacity select{min-height:44px;font-size:14px}
