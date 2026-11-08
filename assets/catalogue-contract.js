@@ -24,7 +24,7 @@ function retiredProduct(p,today,observedAt=null){
   last_low_pence:Number.isSafeInteger(p.low_pence)&&p.low_pence>0?p.low_pence:(p.last_low_pence??null),
   last_observed_at:p.last_observed_at||p.feed_observed_at||observedAt||null,
   last_published_fares:(p.fares?.length?p.fares:p.last_published_fares||[]).map(cell=>cell.slice()),
-  fares:[],low_pence:null,changes:{},drop:null};
+  fares:[],low_pence:null,advertised_price:null,changes:{},drop:null};
 }
 function partitionProducts(data,today){const current=[],retired=[];for(const p of [...data.products,...(data.retired_products||[])]){if(isRetired(p,today))retired.push(retiredProduct(p,today,data.feed?.observed_at));else current.push({...p});}return {current,retired};}
 function freshness(data,now=Date.now()){
@@ -63,6 +63,12 @@ function validate(data){
   for(const cell of p.fares){if(!Array.isArray(cell)||cell.length!==2||typeof cell[0]!=='string'||!cell[0]||columns.has(cell[0])||!Number.isSafeInteger(cell[1])||cell[1]<=0)throw Error('Invalid or conflicting fare category');columns.add(cell[0]);}
   const low=p.fares.length?Math.min(...p.fares.map(x=>x[1])):null;
   if(p.low_pence!==low)throw Error('Price summary does not match published categories');
+  if(p.source_kind==='supplemental_advertisement'){
+   if(p.kind==='Tour or special bundle'&&(p.end_date!==null||p.end_date_basis!=='unverified_package_dates'))throw Error('Unverified full package end date');
+   const e=p.supplemental_source_evidence,a=p.advertised_price;
+   if(p.fares.length||p.low_pence!==null||p.drop||Object.keys(p.changes).length||!object(e)||e.voyage_id!==p.voyage_id||e.ship!==p.ship||e.departure!==p.departure||e.published_nights!==p.duration||!/^https:\/\/www\.windstarcruises\.co\.uk\/itineraries\/[a-z0-9-]+-wind[0-9]+\/?$/.test(e.url)||!e.url.replace(/\/$/,'').endsWith('-wind'+p.voyage_id)||!/^([a-f0-9]{64})$/.test(e.body_sha256)||timestamp(e.observed_at)===null||e.observed_at!==p.supplemental_observed_at)throw Error('Invalid reviewed supplemental identity');
+   if(a!=null&&(!object(a)||!Number.isSafeInteger(a.amount_pence)||a.amount_pence<=0||a.currency!=='GBP'||a.unit!=='per_person_advertised'||a.url!==e.url||a.observed_at!==e.observed_at||a.availability_verified!==false||a.costs_verified!==false||retiredIds.has(p.id)))throw Error('Invalid supplemental advertised price');
+  }else if(p.advertised_price!=null)throw Error('Advertised guide lacks reviewed supplemental source');
  }
  return data;
 }

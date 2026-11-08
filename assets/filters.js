@@ -20,9 +20,10 @@
  function toParams(raw){const s=normalise(raw),p=new URLSearchParams();for(const k of Object.keys(scalarDefaults)){if(s[k]!==scalarDefaults[k]&&s[k]!=='')p.set(k,String(s[k]));}for(const k of ['ships','regions'])for(const value of s[k])p.append(k,value);return p;}
  function rangeErrors(s){const errors={};if(s.from&&s.to&&s.from>s.to)errors.to='Choose an end date on or after the start date.';if(s.minDays&&s.maxDays&&Number(s.minDays)>Number(s.maxDays))errors.maxDays='Maximum length must be at least the minimum.';if(s.minBudget&&s.budget&&Number(s.minBudget)>Number(s.budget))errors.budget='Maximum budget must be at least the minimum.';return errors;}
  function fare(r,s){const fs=Array.isArray(r.fares)?r.fares:[];const found=s.cabin?fs.find(f=>f[0]===s.cabin):fs.reduce((a,b)=>!a||b[1]<a[1]?b:a,null);return found?{column:found[0],amount:found[1]}:null;}
+ function guide(r,s){const f=fare(r,s);if(f)return {...f,source:'supplier'};const a=r.advertised_price;if(s.cabin||r.source_kind!=='supplemental_advertisement'||['past_departure','not_in_latest_feed'].includes(r.catalogue_status)||!a||a.currency!=='GBP'||a.unit!=='per_person_advertised'||!Number.isSafeInteger(a.amount_pence)||a.amount_pence<=0)return null;return {column:null,amount:a.amount_pence,source:'seller',provider:a.provider,observed_at:a.observed_at};}
  // ISO calendar-day arithmetic avoids the spring/autumn clock-change bug.
  function endDate(r){
-  if(!date(r.departure)||r.end_date_basis==='conflicting_published_dates')return null;
+  if(!date(r.departure)||['conflicting_published_dates','unverified_package_dates'].includes(r.end_date_basis))return null;
   if(r.end_date!==undefined&&r.end_date!==null&&r.end_date!=='')return date(r.end_date)&&r.end_date>=r.departure?r.end_date:null;
   if(typeof r.duration==='boolean'||!['number','string'].includes(typeof r.duration)||!/^\d{1,3}$/.test(String(r.duration)))return null;
   const days=Number(r.duration);if(!Number.isInteger(days)||days<1||days>365)return null;
@@ -39,9 +40,9 @@
  }
  function matches(r,s){if(s.ships.length&&!s.ships.includes(r.ship))return false;if(s.regions.length&&!s.regions.includes(r.region))return false;if(s.kind&&s.kind!==r.kind)return false;if(!withinDates(r,s))return false;
   const n=Number(r.duration);if(s.minDays&&n<Number(s.minDays)||s.maxDays&&n>Number(s.maxDays))return false;
-  const f=fare(r,s);if(!f&&(s.cabin||s.minBudget!==''||s.budget!==''))return false;
+  const f=guide(r,s);if(!f&&(s.cabin||s.minBudget!==''||s.budget!==''))return false;
   if(f){const pair=f.amount*2;if(s.minBudget!==''&&pair<Math.round(Number(s.minBudget)*100))return false;if(s.budget!==''&&pair>Math.round(Number(s.budget)*100))return false;}
   return true;
  }
- root.ORIONFilters={empty,normalise,fromParams,toParams,rangeErrors,matches,fare,choices,date,endDate,withinDates};
+ root.ORIONFilters={empty,normalise,fromParams,toParams,rangeErrors,matches,fare,guide,choices,date,endDate,withinDates};
 })(globalThis);

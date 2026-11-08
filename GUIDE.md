@@ -28,7 +28,7 @@ A guide is a starting point. Its currency, party size, category and observation 
 
 ### Published guide for two
 
-The headline guide is twice the lowest positive GBP cell in the supplier feed, or twice your selected column. This arithmetic does not prove the cell's occupancy basis, charges, availability or final payable amount. It does not automatically include flights, hotels or transfers.
+The guide for two doubles the lowest supplier price or your selected supplier category. For additional publisher listings it doubles the advertised per-person figure, while displaying the original value, source and observation date. Confirm occupancy, package contents, mandatory charges and the final payable UK total with the seller.
 
 ### Cabin columns
 
@@ -44,11 +44,11 @@ Taxes, port charges, gratuities, agency fees, flights and transfers may be inclu
 
 ### Supplier categories and duration
 
-Category labels such as Y or SP/OV are the supplier’s published codes. ORION preserves them to avoid comparing different price columns as if they were the same cabin. Confirm their meaning and cabin grade for your exact departure with the seller. Duration follows the supplier’s published number of days; estimated end dates are identified separately.
+Category labels such as Y or SP/OV are the supplier’s published codes. ORION preserves them for comparisons within the same column. Confirm the cabin grade for your exact departure with the seller. Duration keeps its source basis: published supplier days or explicitly advertised nights. Estimated end dates are identified separately.
 
 ## What this index contains
 
-Published supplier products and dated evidence. ORION does not show a confirmed cabin inventory.
+Supplier products and individually reviewed publisher listings, with dated price evidence. Cabin availability requires confirmation.
 
 ### Products and departures
 
@@ -56,11 +56,11 @@ A ship and departure date may appear as a short cruise, a longer combined itiner
 
 ### Days and nights
 
-The official source labels duration as Days. ORION uses published days until the cruise nights are independently confirmed. A package can include time before or after the cruise.
+The official feed labels duration as Days. Reviewed publisher pages may explicitly state nights. Each record keeps that source basis. A package can include time before or after the cruise. Supplemental bundle listings keep the advertised start and nights, with the full package end date unverified. Searches with a return-by date exclude a package whose full end date is unknown.
 
 ### Coverage
 
-The saved feed provides broad Windstar coverage within its published date range. It is not proof that every agency allocation, future release or invitation-only fare has been discovered. Missing prices and missing seller evidence are shown as gaps.
+ORION reconciles the complete saved supplier feed and adds individually reviewed publisher listings. The coverage counts identify both groups. Advertisements keep their own package terms and observation dates. Agency allocations, unpublished fares and newly added links can still fall outside that coverage.
 
 ### See more voyages without paging
 
@@ -116,7 +116,7 @@ Moving to another date changes the purchase. Compare flights, time off and the f
 
 ## What changed, and when?
 
-Read the recorded supplier values for one category. Confirm their assumed per-person basis and the final quote before acting.
+Choose a supplier category, seller observation series or archived capture. Each keeps its own price basis and original timestamp.
 
 ### A useful first read
 
@@ -125,6 +125,10 @@ At its lowest recorded price means the latest value equals the lowest among the 
 ### Same column, actual observations
 
 Select a supplier column in Price history. The chart plots only saved timestamp-and-price pairs for that exact product and column. A stepped line joins observations; it does not establish prices between checks. The data table exposes each plotted value.
+
+### Seller observations
+
+Choose Seller observations to see the retained seller prices matched exactly to that voyage. Select the seller, cabin and package basis. The chart and table preserve every recorded value, with the source link and observation time. These series remain separate from supplier price-drop calculations and recovered archive captures.
 
 ### A drop can apply to another cabin
 
@@ -137,6 +141,10 @@ History starts when ORION first collected the price. Five readings over a few da
 ### Latest successfully observed
 
 A previous price can change again before you book. Source timestamps and any stale-data warning remain visible. A low raw fare still needs a current UK quote.
+
+### Source records awaiting an exact match
+
+The history coverage panel links to a download of seller records awaiting an unambiguous cruise match. Each keeps its original seller identity, date, duration, cabin, price basis and observations. Use its source link to check the commercial product before comparing prices.
 
 ## Similar dates are a starting point
 
@@ -272,7 +280,7 @@ An archived advertisement records what a seller published on one day. Gaps remai
 
 ### Start with the same voyage
 
-ORION accepts archived adverts only when the voyage identifier, ship, departure and duration match a current product. Flight packages and tours with different durations are excluded.
+ORION matches archived adverts to an exact retained product using the voyage identifier, ship, departure and duration. A different flight package, tour or duration requires its own match.
 
 ### Keep sources and cabin types separate
 
@@ -293,6 +301,10 @@ Ask a seller to confirm the exact cabin, inclusions and final UK total. An archi
 ## Track an exact price
 
 Choose a departure and supplier category, then save a target for two. Tracked prices stay in this browser.
+
+### Which prices support a watch
+
+A watch needs a published supplier category. Additional publisher advertisements can be compared and saved. A target requires suitable supplier-category evidence for that exact product.
 
 ### Save now, check when evidence is ready
 
