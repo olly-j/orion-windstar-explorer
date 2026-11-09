@@ -60,6 +60,48 @@ function decodeShipEnvelope(document){
  const result={...document,products};delete result.history_encoding;delete result.shared_values;if(version==='shared_values_v2')delete result.object_schemas;return result;
 }
 
+
+/* Oversized ship files retain the shared-value contract inside a bounded, lossless gzip envelope. */
+function parseShipJSON(text){
+ // JSON.parse alone accepts duplicate object keys. Reject them before decoding immutable evidence.
+ const stack=[];
+ for(let i=0;i<text.length;i++){
+  const char=text[i];
+  if(char==='"'){
+   const start=i;let closed=false;
+   while(++i<text.length){if(text[i]==='\\'){i++;continue}if(text[i]==='"'){closed=true;break}}
+   if(!closed)throw Error('Unterminated compressed history string');
+   const frame=stack[stack.length-1];
+   if(frame?.keys&&frame.key){const key=JSON.parse(text.slice(start,i+1));if(frame.keys.has(key))throw Error('Duplicate compressed history object key');frame.keys.add(key);frame.key=false;}
+  }else if(char==='{')stack.push({keys:new Set(),key:true});
+  else if(char==='[')stack.push({});
+  else if(char==='}'||char===']')stack.pop();
+  else if(char===','&&stack[stack.length-1]?.keys)stack[stack.length-1].key=true;
+ }
+ return JSON.parse(text);
+}
+async function readShipEnvelope(document){
+ if(object(document)&&!Object.hasOwn(document,'history_encoding')&&['gzip_base64','uncompressed_bytes','uncompressed_sha256'].some(key=>Object.hasOwn(document,key)))throw Error('Compressed ship history lacks its encoding contract');
+ if(!object(document)||document.history_encoding!=='gzip_shared_values_v3')return decodeShipEnvelope(document);
+ const fields=['schema_version','ship','history_encoding','uncompressed_bytes','uncompressed_sha256','gzip_base64'];
+ if(Object.keys(document).length!==fields.length||Object.keys(document).some(key=>!fields.includes(key))||document.schema_version!==2||typeof document.ship!=='string'||!Number.isSafeInteger(document.uncompressed_bytes)||document.uncompressed_bytes<1||document.uncompressed_bytes>64*1024*1024||typeof document.uncompressed_sha256!=='string'||!/^[a-f0-9]{64}$/.test(document.uncompressed_sha256)||typeof document.gzip_base64!=='string'||!document.gzip_base64.length||document.gzip_base64.length>8000000||document.gzip_base64.length%4!==0||new TextEncoder().encode(JSON.stringify(document)).length>8000000)throw Error('Invalid compressed ship history envelope');
+ const binary=atob(document.gzip_base64);if(btoa(binary)!==document.gzip_base64)throw Error('Noncanonical ship history base64');
+ const compressed=Uint8Array.from(binary,char=>char.charCodeAt(0));
+ if(compressed.length<18||compressed[0]!==31||compressed[1]!==139||compressed[2]!==8||compressed[3]!==0||compressed.slice(4,8).some(x=>x!==0)||![0,2,4].includes(compressed[8]))throw Error('Invalid ship history gzip framing');
+ if(typeof DecompressionStream!=='function'||!globalThis.crypto?.subtle)throw Error('This browser cannot open the complete ship history. Use a current browser.');
+ // Native gzip rejects extra members/trailing bytes; the streamed bound also stops oversized output.
+ const reader=new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip')).getReader(),chunks=[];let length=0;
+ try{while(true){const part=await reader.read();if(part.done)break;length+=part.value.byteLength;if(length>document.uncompressed_bytes||length>64*1024*1024)throw Error('Ship history decompression exceeds declared bounds');chunks.push(part.value);}}
+ catch(error){await reader.cancel().catch(()=>{});throw error;}finally{reader.releaseLock();}
+ if(length!==document.uncompressed_bytes)throw Error('Ship history decoded length differs');
+ const bytes=new Uint8Array(length);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.byteLength;}
+ const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');
+ if(digest!==document.uncompressed_sha256)throw Error('Ship history decoded checksum differs');
+ const inner=parseShipJSON(new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(bytes));
+ if(!object(inner)||inner.schema_version!==2||inner.ship!==document.ship||!['shared_values_v1','shared_values_v2'].includes(inner.history_encoding))throw Error('Compressed ship history identity or encoding differs');
+ return decodeShipEnvelope(inner);
+}
+
 const UNMATCHED_SCOPE='Unassigned public seller observations; no inferred association to a supplier voyage.';
 function checkUnmatchedLogical(value,encoded){
  const allowed=['schema_version','scope','observations','ships','seller_history_attribution'];
@@ -207,6 +249,6 @@ function validate(data){
  return data;
 }
 function matchesManifest(data,manifest){return !manifest||(data.release===manifest.release&&data.built_at===manifest.built_at&&dataPath(manifest.data_file));}
-return Object.freeze({timestamp,date,dataPath,freshness,validate,matchesManifest,discoveryKey,relatedProducts,sameDateComparison,historyColumns,isRetired,retiredProduct,partitionProducts,decodeShipEnvelope,decodeUnmatchedEnvelope,unmatchedHistoryDownload,reviewedTCLCardSource,validateSupplementalDetail,sellerPointAttribution,validateAgentOffers,LIMIT});
+return Object.freeze({timestamp,date,dataPath,freshness,validate,matchesManifest,discoveryKey,relatedProducts,sameDateComparison,historyColumns,isRetired,retiredProduct,partitionProducts,decodeShipEnvelope,readShipEnvelope,decodeUnmatchedEnvelope,unmatchedHistoryDownload,reviewedTCLCardSource,validateSupplementalDetail,sellerPointAttribution,validateAgentOffers,LIMIT});
 });
 
