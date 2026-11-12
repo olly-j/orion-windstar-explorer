@@ -132,7 +132,7 @@ Opening history from an agent-led price selects that exact source observation an
 
 ### A drop can apply to another cabin
 
-A card's recorded-drop badge uses the largest decrease across that product's columns unless you filter to a particular column. Open the history to see the exact code, previous amount and current amount. Do not subtract that percentage from the lowest headline price.
+A card's recorded-drop badge uses the largest latest decrease across that product's columns unless you filter to a particular column. Unchanged price confirmations preserve that change; the next different price replaces it, including an increase. History shows the exact category, both amounts, when the change was first observed and the latest confirmation. Largest recorded drop orders these percentages from highest to lowest and selects the largest matching decrease when grouped by itinerary. Do not subtract that percentage from the lowest headline price.
 
 ### Limited history
 

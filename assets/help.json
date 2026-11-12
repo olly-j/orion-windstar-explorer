@@ -8,7 +8,7 @@
     },
     "drop": {
       "title": "What has actually dropped?",
-      "text": "A recorded decrease in the same supplier fare column between two saved checks. It is not a verified saving against today's other sellers, and it may be for a different cabin from the cheapest one shown.",
+      "text": "The latest actual price decrease in the same supplier category. Unchanged confirmations preserve the percentage; a later increase replaces the decrease. Open history for both amounts and dates. This may be a different cabin from the headline guide, and final costs need a seller quote.",
       "topic": "history"
     },
     "otherdates": {
@@ -215,7 +215,7 @@
         },
         {
           "heading": "A drop can apply to another cabin",
-          "text": "A card's recorded-drop badge uses the largest decrease across that product's columns unless you filter to a particular column. Open the history to see the exact code, previous amount and current amount. Do not subtract that percentage from the lowest headline price."
+          "text": "A card's recorded-drop badge uses the largest latest decrease across that product's columns unless you filter to a particular column. Unchanged price confirmations preserve that change; the next different price replaces it, including an increase. History shows the exact category, both amounts, when the change was first observed and the latest confirmation. Largest recorded drop orders these percentages from highest to lowest and selects the largest matching decrease when grouped by itinerary. Do not subtract that percentage from the lowest headline price."
         },
         {
           "heading": "Limited history",
