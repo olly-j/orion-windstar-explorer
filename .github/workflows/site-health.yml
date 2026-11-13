@@ -1,0 +1,211 @@
+name: ORION public snapshot check
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - release.json
+      - .github/workflows/site-health.yml
+permissions: {}
+concurrency:
+  group: orion-public-snapshot
+  cancel-in-progress: true
+jobs:
+  observe:
+    if: ${{ github.repository == 'olly-j/orion-windstar-explorer' && github.event.repository.private == false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Read only the public manifest and homepage
+        env:
+          REPOSITORY_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          python3 - --sha "$REPOSITORY_SHA" --summary "$GITHUB_STEP_SUMMARY" <<'ORION_OBSERVER'
+          #!/usr/bin/env python3
+          """Small public-only observer. No collection, publishing, private access or writes."""
+          from __future__ import annotations
+          import argparse
+          from datetime import datetime, timezone
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import time
+          from urllib.error import HTTPError, URLError
+          from urllib.request import HTTPRedirectHandler, Request, build_opener
+          
+          REPOSITORY = 'olly-j/orion-windstar-explorer'
+          BASE = 'https://olly-j.github.io/orion-windstar-explorer/'
+          RAW = 'https://raw.githubusercontent.com/' + REPOSITORY + '/'
+          MAX_BYTES = 1024 * 1024
+          CLOCK_LIMIT_HOURS = 6
+          
+          class ProbeError(Exception):
+              pass
+          
+          class NoRedirect(HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+          
+          opener = build_opener(NoRedirect())
+          
+          def utc():
+              return datetime.now(timezone.utc)
+          
+          def stamp(value):
+              if not isinstance(value, str):
+                  return None
+              try:
+                  dt = datetime.fromisoformat(value.replace('Z', '+00:00'))
+                  return dt.astimezone(timezone.utc) if dt.tzinfo is not None else None
+              except (ValueError, OverflowError):
+                  return None
+          
+          def read_public(url):
+              allowed = url in (BASE + 'release.json', BASE + 'index.html') or bool(
+                  re.fullmatch(re.escape(RAW) + r'[a-f0-9]{40}/release\.json', url))
+              if not allowed:
+                  raise ProbeError('unapproved_url')
+              for attempt in range(2):
+                  try:
+                      request = Request(url, headers={'User-Agent': 'ORION-Manifest-Watch/1.0', 'Cache-Control': 'no-cache'})
+                      with opener.open(request, timeout=15) as response:
+                          if response.geturl() != url:
+                              raise ProbeError('redirect_refused')
+                          body = response.read(MAX_BYTES + 1)
+                          if len(body) > MAX_BYTES:
+                              raise ProbeError('response_size_limit')
+                          return body
+                  except HTTPError as exc:
+                      retry = exc.code in (502, 503, 504) and not exc.headers.get('Retry-After') and attempt == 0
+                      code = exc.code
+                      exc.close()
+                      if retry:
+                          time.sleep(1)
+                          continue
+                      raise ProbeError('http_' + str(code)) from exc
+                  except (URLError, TimeoutError, ConnectionError) as exc:
+                      if attempt == 0:
+                          time.sleep(1)
+                          continue
+                      raise ProbeError('network_unverified') from exc
+          
+          def strict_json(raw):
+              def unique(pairs):
+                  result = {}
+                  for key, value in pairs:
+                      if key in result:
+                          raise ValueError('duplicate_key')
+                      result[key] = value
+                  return result
+              def invalid(value):
+                  raise ValueError('nonfinite_json')
+              result = json.loads(raw, object_pairs_hook=unique, parse_constant=invalid)
+              if not isinstance(result, dict):
+                  raise ValueError('manifest_not_object')
+              return result
+          
+          def observe(sha, *, fetch=read_public, clock=utc):
+              if not re.fullmatch(r'[a-f0-9]{40}', sha):
+                  raise ValueError('Expected the exact public commit SHA')
+              report = {'schema_version': 1, 'execution_mode': 'public_manifest_watch',
+                        'checked_at': clock().isoformat(), 'repository': REPOSITORY, 'head_sha': sha,
+                        'scope': 'manifest_and_homepage_only', 'full_artifact_integrity_verified': False,
+                        'catalogue_history_verified': False, 'seller_offers_verified': False,
+                        'status': 'inconclusive', 'publication_state': 'unverified', 'hosted_verified': False,
+                        'verified_files': 0, 'expected_files': 2, 'issues': [], 'uncertainties': [],
+                        'clocks': {}, 'bytes_fetched': 0, 'requests_completed': 0}
+              def get(url):
+                  body = fetch(url)
+                  if not isinstance(body, bytes) or len(body) > MAX_BYTES:
+                      raise ProbeError('response_size_limit')
+                  report['requests_completed'] += 1
+                  report['bytes_fetched'] += len(body)
+                  return body
+              try:
+                  expected = get(RAW + sha + '/release.json')
+                  raw = get(BASE + 'release.json')
+                  report['http_probe_at'] = clock().isoformat()
+                  report['checked_at'] = report['http_probe_at']
+                  report['repository_manifest_sha256'] = hashlib.sha256(expected).hexdigest()
+                  report['manifest_sha256'] = hashlib.sha256(raw).hexdigest()
+                  manifest, repository_manifest = strict_json(raw), strict_json(expected)
+                  for value in (manifest, repository_manifest):
+                      if not isinstance(value.get('release'), str) or not re.fullmatch(r'[A-Za-z0-9.+_-]{1,80}', value['release']):
+                          raise ValueError('invalid_release')
+                      if not isinstance(value.get('data_file'), str) or not re.fullmatch(r'data/catalogue\.[a-f0-9]{14,64}\.json', value['data_file']):
+                          raise ValueError('invalid_data_file')
+                  for key in ['release', 'data_file', 'built_at', 'feed_last_confirmed_at', 'collector_last_success', 'seller_latest_observed_at', 'automatic_publication']:
+                      report[key] = manifest.get(key)
+                  report['repository_manifest'] = {k: repository_manifest.get(k) for k in ['release', 'built_at', 'data_file']}
+                  match = raw == expected
+                  if match:
+                      report['verified_files'] += 1
+                  else:
+                      report['issues'].append('pending_or_mixed_publication')
+                  index = get(BASE + 'index.html')
+                  files = manifest.get('files')
+                  target = files.get('index.html') if isinstance(files, dict) else None
+                  actual = hashlib.sha256(index).hexdigest()
+                  report['homepage_sha256'] = actual
+                  homepage_ok = bool(isinstance(target, str) and re.fullmatch(r'[a-f0-9]{64}', target) and actual == target)
+                  if homepage_ok:
+                      report['verified_files'] += 1
+                  else:
+                      report['issues'].append('homepage_hash_mismatch')
+                  now = stamp(report['checked_at'])
+                  for key in ['built_at', 'feed_last_confirmed_at', 'collector_last_success']:
+                      at = stamp(manifest.get(key))
+                      age = (now - at).total_seconds() / 3600 if at is not None else None
+                      valid = age is not None and age >= 0
+                      report['clocks'][key] = {'at': manifest.get(key), 'age_hours': round(age, 3) if valid else None,
+                                              'maximum_hours': CLOCK_LIMIT_HOURS, 'verified': valid}
+                      if not valid:
+                          report['uncertainties'].append('invalid_clock:' + key)
+                      elif age > CLOCK_LIMIT_HOURS:
+                          report['issues'].append('collector_heartbeat_stale' if key == 'collector_last_success' else 'stale_publication:' + key)
+                  report['hosted_verified'] = match and homepage_ok
+                  required_valid = all(report['clocks'][k]['verified'] for k in ['built_at', 'feed_last_confirmed_at'])
+                  stale = any(x.startswith('stale_publication:') for x in report['issues'])
+                  report['publication_state'] = ('pending_or_mixed_publication' if not match else
+                      'publication_integrity_failed' if not homepage_ok else 'unverified' if not required_valid else
+                      'stale_publication' if stale else 'current_manifest_and_homepage')
+              except ProbeError as exc:
+                  report['uncertainties'].append(str(exc))
+              except (ValueError, TypeError, KeyError, UnicodeError) as exc:
+                  report['issues'].append('malformed_manifest:' + type(exc).__name__)
+              report['status'] = 'failed' if report['issues'] else 'inconclusive' if report['uncertainties'] else 'passed'
+              report['completed_at'] = clock().isoformat()
+              return report
+          
+          def exit_code(report):
+              if report['uncertainties']:
+                  return 2
+              repeated = ('stale_publication:', 'collector_heartbeat_stale', 'pending_or_mixed_publication')
+              return 1 if any(not finding.startswith(repeated) for finding in report['issues']) else 0
+          
+          def main():
+              parser = argparse.ArgumentParser(description=__doc__)
+              parser.add_argument('--sha', required=True)
+              parser.add_argument('--summary', type=Path)
+              args = parser.parse_args()
+              report = observe(args.sha)
+              if args.summary:
+                  lines = ['# ORION public snapshot check', '', '**Publication: ' + report['publication_state'] + '**',
+                           'Observed: ' + report['checked_at'], 'Health: ' + report['status'],
+                           'Scope: exact manifest and homepage only. Full catalogue, seller and history validation is not performed.',
+                           'A completed workflow is not a healthy-site or fresh-fare claim.',
+                           'This observer cannot collect fares, publish a release or send a notification.', '',
+                           '```json', json.dumps(report, indent=2), '```']
+                  with args.summary.open('a') as handle:
+                      handle.write('\n'.join(lines) + '\n')
+              print(json.dumps(report, separators=(',', ':')))
+              return exit_code(report)
+          
+          if __name__ == '__main__':
+              raise SystemExit(main())
+          ORION_OBSERVER
